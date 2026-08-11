@@ -1,0 +1,261 @@
+[
+{
+  "model": "gallery.galleryimage",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.937Z",
+    "updated_at": "2026-08-04T10:05:33.937Z",
+    "title": "Water Slides",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "water_slides",
+    "display_order": 0,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.951Z",
+    "updated_at": "2026-08-04T10:05:33.951Z",
+    "title": "Lazy River",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "lazy_river",
+    "display_order": 1,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.964Z",
+    "updated_at": "2026-08-04T10:05:33.964Z",
+    "title": "Kiddie Splash Zone",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "kiddie_zone",
+    "display_order": 2,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.977Z",
+    "updated_at": "2026-08-04T10:05:33.977Z",
+    "title": "Dining & Delights",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "dining",
+    "display_order": 3,
+    "featured": false,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-08-09T11:50:03.632Z",
+    "updated_at": "2026-08-10T02:50:32.068Z",
+    "title": "abcd",
+    "image": "gallery/CLEANBRUSH.avif",
+    "alt_text": "",
+    "caption": "new",
+    "category": "water_slides",
+    "display_order": 4,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "site_settings.sitesettings",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.511Z",
+    "updated_at": "2026-08-04T10:05:33.524Z",
+    "site_name": "Murjan Splash Park",
+    "phone": "+971 2 555 0100",
+    "email": "info@murjansplashpark.com",
+    "address": "Inside Khalifa Park, Sheikh Zayed Bin Sultan St. - Opp. ADIB, Al-Muntazzh Zone 1, Abu Dhabi",
+    "google_maps_embed_url": "",
+    "instagram_url": "https://instagram.com/murjansplashpark",
+    "facebook_url": "https://facebook.com/murjansplashpark",
+    "twitter_url": "",
+    "whatsapp_number": "+971505550100",
+    "footer_text": "The region's premier family water park experience — open daily, creating memories since 2018.",
+    "copyright_text": "© 2026 Murjan Splash Park. All rights reserved.",
+    "booking_redirect_url": "https://book.murjansplashpark.com",
+    "default_meta_title": "Murjan Splash Park | Water Park in Abu Dhabi, Khalifa Park",
+    "default_meta_description": "Murjan Splash Park - Abu Dhabi's premier water park inside Khalifa Park. Book tickets online for water slides, lazy river, and family fun.",
+    "default_og_image": ""
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.662Z",
+    "updated_at": "2026-08-10T03:04:37.229Z",
+    "day": "mon",
+    "opening_time": "09:30:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.680Z",
+    "updated_at": "2026-08-10T03:04:38.440Z",
+    "day": "tue",
+    "opening_time": "09:00:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.696Z",
+    "updated_at": "2026-08-10T03:04:39.850Z",
+    "day": "wed",
+    "opening_time": "09:00:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.710Z",
+    "updated_at": "2026-08-10T03:04:40.874Z",
+    "day": "thu",
+    "opening_time": "09:00:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.726Z",
+    "updated_at": "2026-08-04T10:05:33.726Z",
+    "day": "fri",
+    "opening_time": "09:00:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.744Z",
+    "updated_at": "2026-08-09T13:24:27.197Z",
+    "day": "sat",
+    "opening_time": "09:30:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.workinghours",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.775Z",
+    "updated_at": "2026-08-09T13:24:28.580Z",
+    "day": "sun",
+    "opening_time": "09:30:00",
+    "closing_time": "20:00:00",
+    "is_closed": false
+  }
+},
+{
+  "model": "site_settings.announcementbanner",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.795Z",
+    "updated_at": "2026-08-04T10:05:33.795Z",
+    "text": "Book now and receive 20% off on all weekday visits. Offer valid through 31 August 2026.",
+    "cta_text": "Book Tickets",
+    "cta_url": "https://book.murjansplashpark.com",
+    "is_active": true,
+    "expires_at": "2026-08-31"
+  }
+},
+{
+  "model": "site_settings.pageseo",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.888Z",
+    "updated_at": "2026-08-04T10:05:33.888Z",
+    "page_slug": "home",
+    "meta_title": "Murjan Splash Park | Water Park in Abu Dhabi, Khalifa Park",
+    "meta_description": "Murjan Splash Park - Abu Dhabi's premier water park inside Khalifa Park. Slides, lazy river, kiddie zone, and dining for the whole family.",
+    "og_image": ""
+  }
+},
+{
+  "model": "site_settings.pageseo",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.907Z",
+    "updated_at": "2026-08-04T10:05:33.907Z",
+    "page_slug": "attractions",
+    "meta_title": "Attractions | Murjan Splash Park Abu Dhabi",
+    "meta_description": "Explore water slides, lazy river, and kiddie splash zone at Murjan Splash Park, Khalifa Park, Abu Dhabi.",
+    "og_image": ""
+  }
+},
+{
+  "model": "site_settings.pageseo",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.923Z",
+    "updated_at": "2026-08-04T10:05:33.923Z",
+    "page_slug": "tickets",
+    "meta_title": "Murjan Splash Park Tickets | Book Online - Abu Dhabi",
+    "meta_description": "Murjan Splash Park ticket prices and booking. Adult, child, and family pack options for Abu Dhabi's premier water park.",
+    "og_image": ""
+  }
+},
+{
+  "model": "site_settings.herosection",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.538Z",
+    "updated_at": "2026-08-09T10:34:57.691Z",
+    "headline": "Dive in to endless fun",
+    "subheadline": "Welcome Fantasea",
+    "background_image": "",
+    "cta_text": "Book Tickets"
+  }
+},
+{
+  "model": "site_settings.featurehighlight",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.565Z",
+    "updated_at": "2026-08-09T10:38:44.827Z",
+    "icon": 

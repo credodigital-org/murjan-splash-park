@@ -227,6 +227,88 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 
+# # ============================================================================
+# # Object Storage / S3 / Supabase
+# # ============================================================================
+
+# USE_S3 = config(
+#     "USE_S3",
+#     default=False,
+#     cast=bool,
+# )
+
+# if USE_S3:
+#     INSTALLED_APPS += ["storages"]
+
+#     AWS_ACCESS_KEY_ID = config(
+#         "AWS_ACCESS_KEY_ID",
+#         default="",
+#     )
+
+#     AWS_SECRET_ACCESS_KEY = config(
+#         "AWS_SECRET_ACCESS_KEY",
+#         default="",
+#     )
+
+#     AWS_STORAGE_BUCKET_NAME = config(
+#         "AWS_STORAGE_BUCKET_NAME",
+#         default="",
+#     )
+
+#     AWS_S3_ENDPOINT_URL = config(
+#         "AWS_S3_ENDPOINT_URL",
+#         default="",
+#     )
+
+#     AWS_S3_CUSTOM_DOMAIN = config(
+#         "AWS_S3_CUSTOM_DOMAIN",
+#         default="",
+#     )
+
+#     AWS_DEFAULT_ACL = None
+
+#     AWS_QUERYSTRING_AUTH = False
+
+#     AWS_S3_FILE_OVERWRITE = False
+
+
+# # ============================================================================
+# # Django 6 Storage Configuration
+# # ============================================================================
+# #
+# # IMPORTANT:
+# # Django 6 uses STORAGES.
+# #
+# # DEFAULT_FILE_STORAGE is intentionally NOT used.
+# #
+# # ============================================================================
+
+# if USE_S3:
+#     STORAGES = {
+#         "default": {
+#             "BACKEND": "storages.backends.s3.S3Storage",
+#         },
+#         "staticfiles": {
+#             "BACKEND": (
+#                 "whitenoise.storage."
+#                 "CompressedManifestStaticFilesStorage"
+#             ),
+#         },
+#     }
+# else:
+#     STORAGES = {
+#         "default": {
+#             "BACKEND": "django.core.files.storage.FileSystemStorage",
+#         },
+#         "staticfiles": {
+#             "BACKEND": (
+#                 "whitenoise.storage."
+#                 "CompressedManifestStaticFilesStorage"
+#             ),
+#         },
+#     }
+
+
 # ============================================================================
 # Object Storage / S3 / Supabase
 # ============================================================================
@@ -255,38 +337,37 @@ if USE_S3:
         default="",
     )
 
+    # Supabase S3-compatible endpoint
     AWS_S3_ENDPOINT_URL = config(
         "AWS_S3_ENDPOINT_URL",
         default="",
     )
 
-    AWS_S3_CUSTOM_DOMAIN = config(
-        "AWS_S3_CUSTOM_DOMAIN",
+    # Supabase project URL used for public media URLs
+    SUPABASE_PROJECT_URL = config(
+        "SUPABASE_PROJECT_URL",
         default="",
     )
 
     AWS_DEFAULT_ACL = None
 
+    # Bucket is public
     AWS_QUERYSTRING_AUTH = False
 
+    # Don't overwrite files with the same name
     AWS_S3_FILE_OVERWRITE = False
+
+    AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 
 # ============================================================================
 # Django 6 Storage Configuration
 # ============================================================================
-#
-# IMPORTANT:
-# Django 6 uses STORAGES.
-#
-# DEFAULT_FILE_STORAGE is intentionally NOT used.
-#
-# ============================================================================
 
 if USE_S3:
     STORAGES = {
         "default": {
-            "BACKEND": "storages.backends.s3.S3Storage",
+            "BACKEND": "apps.core.storage.SupabasePublicStorage",
         },
         "staticfiles": {
             "BACKEND": (
@@ -295,6 +376,7 @@ if USE_S3:
             ),
         },
     }
+
 else:
     STORAGES = {
         "default": {
