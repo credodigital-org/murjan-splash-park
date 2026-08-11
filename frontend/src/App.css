@@ -1,0 +1,27 @@
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 20s linear infinite;
+}
+
+/* Pause ticker when user hovers over it */
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
