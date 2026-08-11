@@ -31,7 +31,10 @@ ALLOWED_HOSTS = config(
 
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
-    default="",
+    default=(
+        "https://murjan-splash-park.onrender.com,"
+        "https://murjan-splash-park.vercel.app"
+    ),
     cast=Csv(),
 )
 
@@ -234,7 +237,6 @@ USE_S3 = config(
     cast=bool,
 )
 
-
 if USE_S3:
     INSTALLED_APPS += ["storages"]
 
@@ -359,7 +361,8 @@ CORS_ALLOWED_ORIGINS = config(
     "CORS_ALLOWED_ORIGINS",
     default=(
         "http://localhost:5173,"
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173,"
+        "https://murjan-splash-park.vercel.app"
     ),
     cast=Csv(),
 )
