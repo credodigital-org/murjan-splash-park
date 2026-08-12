@@ -1,113 +1,5 @@
 [
 {
-  "model": "gallery.galleryimage",
-  "pk": 1,
-  "fields": {
-    "created_at": "2026-08-04T10:05:33.937Z",
-    "updated_at": "2026-08-04T10:05:33.937Z",
-    "title": "Water Slides",
-    "image": "",
-    "alt_text": "",
-    "caption": "",
-    "category": "water_slides",
-    "display_order": 0,
-    "featured": true,
-    "link_url": "",
-    "is_active": true
-  }
-},
-{
-  "model": "gallery.galleryimage",
-  "pk": 2,
-  "fields": {
-    "created_at": "2026-08-04T10:05:33.951Z",
-    "updated_at": "2026-08-04T10:05:33.951Z",
-    "title": "Lazy River",
-    "image": "",
-    "alt_text": "",
-    "caption": "",
-    "category": "lazy_river",
-    "display_order": 1,
-    "featured": true,
-    "link_url": "",
-    "is_active": true
-  }
-},
-{
-  "model": "gallery.galleryimage",
-  "pk": 3,
-  "fields": {
-    "created_at": "2026-08-04T10:05:33.964Z",
-    "updated_at": "2026-08-04T10:05:33.964Z",
-    "title": "Kiddie Splash Zone",
-    "image": "",
-    "alt_text": "",
-    "caption": "",
-    "category": "kiddie_zone",
-    "display_order": 2,
-    "featured": true,
-    "link_url": "",
-    "is_active": true
-  }
-},
-{
-  "model": "gallery.galleryimage",
-  "pk": 4,
-  "fields": {
-    "created_at": "2026-08-04T10:05:33.977Z",
-    "updated_at": "2026-08-04T10:05:33.977Z",
-    "title": "Dining & Delights",
-    "image": "",
-    "alt_text": "",
-    "caption": "",
-    "category": "dining",
-    "display_order": 3,
-    "featured": false,
-    "link_url": "",
-    "is_active": true
-  }
-},
-{
-  "model": "gallery.galleryimage",
-  "pk": 5,
-  "fields": {
-    "created_at": "2026-08-09T11:50:03.632Z",
-    "updated_at": "2026-08-10T02:50:32.068Z",
-    "title": "abcd",
-    "image": "gallery/CLEANBRUSH.avif",
-    "alt_text": "",
-    "caption": "new",
-    "category": "water_slides",
-    "display_order": 4,
-    "featured": true,
-    "link_url": "",
-    "is_active": true
-  }
-},
-{
-  "model": "site_settings.sitesettings",
-  "pk": 1,
-  "fields": {
-    "created_at": "2026-08-04T10:05:33.511Z",
-    "updated_at": "2026-08-04T10:05:33.524Z",
-    "site_name": "Murjan Splash Park",
-    "phone": "+971 2 555 0100",
-    "email": "info@murjansplashpark.com",
-    "address": "Inside Khalifa Park, Sheikh Zayed Bin Sultan St. - Opp. ADIB, Al-Muntazzh Zone 1, Abu Dhabi",
-    "google_maps_embed_url": "",
-    "instagram_url": "https://instagram.com/murjansplashpark",
-    "facebook_url": "https://facebook.com/murjansplashpark",
-    "twitter_url": "",
-    "whatsapp_number": "+971505550100",
-    "footer_text": "The region's premier family water park experience — open daily, creating memories since 2018.",
-    "copyright_text": "© 2026 Murjan Splash Park. All rights reserved.",
-    "booking_redirect_url": "https://book.murjansplashpark.com",
-    "default_meta_title": "Murjan Splash Park | Water Park in Abu Dhabi, Khalifa Park",
-    "default_meta_description": "Murjan Splash Park - Abu Dhabi's premier water park inside Khalifa Park. Book tickets online for water slides, lazy river, and family fun.",
-    "default_og_image": ""
-  }
-},
-{
   "model": "site_settings.workinghours",
   "pk": 1,
   "fields": {
@@ -205,57 +97,198 @@
   }
 },
 {
-  "model": "site_settings.pageseo",
+  "model": "site_settings.testimonial",
   "pk": 1,
   "fields": {
-    "created_at": "2026-08-04T10:05:33.888Z",
-    "updated_at": "2026-08-04T10:05:33.888Z",
-    "page_slug": "home",
-    "meta_title": "Murjan Splash Park | Water Park in Abu Dhabi, Khalifa Park",
-    "meta_description": "Murjan Splash Park - Abu Dhabi's premier water park inside Khalifa Park. Slides, lazy river, kiddie zone, and dining for the whole family.",
-    "og_image": ""
+    "created_at": "2026-08-04T10:05:33.622Z",
+    "updated_at": "2026-08-09T10:24:02.893Z",
+    "guest_name": "Sarah Al RashidS",
+    "location": "Dubai, UAE",
+    "quote": "Murjan is on a different level. The park is immaculate, the staff incredibly attentive, and the slides are pure joy. frg",
+    "rating": 1,
+    "is_active": true,
+    "display_order": 0
   }
 },
 {
-  "model": "site_settings.pageseo",
+  "model": "site_settings.testimonial",
   "pk": 2,
   "fields": {
-    "created_at": "2026-08-04T10:05:33.907Z",
-    "updated_at": "2026-08-04T10:05:33.907Z",
-    "page_slug": "attractions",
-    "meta_title": "Attractions | Murjan Splash Park Abu Dhabi",
-    "meta_description": "Explore water slides, lazy river, and kiddie splash zone at Murjan Splash Park, Khalifa Park, Abu Dhabi.",
-    "og_image": ""
+    "created_at": "2026-08-04T10:05:33.634Z",
+    "updated_at": "2026-08-04T10:05:33.634Z",
+    "guest_name": "James Thornton",
+    "location": "London, UK",
+    "quote": "We visit every summer and it never disappoints. The lazy river is serene and the food is excellent.",
+    "rating": 5,
+    "is_active": true,
+    "display_order": 1
   }
 },
 {
-  "model": "site_settings.pageseo",
+  "model": "site_settings.testimonial",
   "pk": 3,
   "fields": {
-    "created_at": "2026-08-04T10:05:33.923Z",
-    "updated_at": "2026-08-04T10:05:33.923Z",
-    "page_slug": "tickets",
-    "meta_title": "Murjan Splash Park Tickets | Book Online - Abu Dhabi",
-    "meta_description": "Murjan Splash Park ticket prices and booking. Adult, child, and family pack options for Abu Dhabi's premier water park.",
-    "og_image": ""
+    "created_at": "2026-08-04T10:05:33.646Z",
+    "updated_at": "2026-08-04T10:05:33.646Z",
+    "guest_name": "Jaison Varghese",
+    "location": "London, UK",
+    "quote": "We visit every summer and it never disappoints. It genuinely feels like a luxury resort.",
+    "rating": 5,
+    "is_active": true,
+    "display_order": 2
   }
 },
 {
-  "model": "site_settings.herosection",
-  "pk": 1,
+  "model": "site_settings.testimonial",
+  "pk": 4,
   "fields": {
-    "created_at": "2026-08-04T10:05:33.538Z",
-    "updated_at": "2026-08-09T10:34:57.691Z",
-    "headline": "Dive in to endless fun",
-    "subheadline": "Welcome Fantasea",
-    "background_image": "",
-    "cta_text": "Book Tickets"
+    "created_at": "2026-08-09T10:24:47.237Z",
+    "updated_at": "2026-08-09T10:24:47.237Z",
+    "guest_name": "abcd",
+    "location": "abu dhabi",
+    "quote": "good",
+    "rating": 2,
+    "is_active": true,
+    "display_order": 0
   }
 },
 {
-  "model": "site_settings.featurehighlight",
+  "model": "gallery.galleryimage",
   "pk": 1,
   "fields": {
-    "created_at": "2026-08-04T10:05:33.565Z",
-    "updated_at": "2026-08-09T10:38:44.827Z",
-    "icon": 
+    "created_at": "2026-08-04T10:05:33.937Z",
+    "updated_at": "2026-08-04T10:05:33.937Z",
+    "title": "Water Slides",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "water_slides",
+    "display_order": 0,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.951Z",
+    "updated_at": "2026-08-04T10:05:33.951Z",
+    "title": "Lazy River",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "lazy_river",
+    "display_order": 1,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.964Z",
+    "updated_at": "2026-08-04T10:05:33.964Z",
+    "title": "Kiddie Splash Zone",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "kiddie_zone",
+    "display_order": 2,
+    "featured": true,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.977Z",
+    "updated_at": "2026-08-04T10:05:33.977Z",
+    "title": "Dining & Delights",
+    "image": "",
+    "alt_text": "",
+    "caption": "",
+    "category": "dining",
+    "display_order": 3,
+    "featured": false,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "gallery.galleryimage",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-08-11T13:30:10.132Z",
+    "updated_at": "2026-08-11T13:30:10.132Z",
+    "title": "image2",
+    "image": "gallery/icon-512.png",
+    "alt_text": "",
+    "caption": "",
+    "category": "general",
+    "display_order": 0,
+    "featured": false,
+    "link_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-08-04T10:05:33.992Z",
+    "updated_at": "2026-08-04T10:05:33.992Z",
+    "title": "5 Tips for Your First Visit to Murjan",
+    "slug": "5-tips-for-your-first-visit-to-murjan",
+    "excerpt": "Everything you need to know before your first splash...",
+    "content": "Everything you need to know before your first splash... (full article content goes here)",
+    "featured_image": "",
+    "status": "published",
+    "featured": false,
+    "meta_title": "",
+    "meta_description": "",
+    "published_at": "2026-08-04T10:05:33.989Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-08-04T10:05:34.009Z",
+    "updated_at": "2026-08-04T10:05:34.009Z",
+    "title": "Meet Our Certified Lifeguard Team",
+    "slug": "meet-our-certified-lifeguard-team",
+    "excerpt": "Safety is our top priority at every attraction...",
+    "content": "Safety is our top priority at every attraction... (full article content goes here)",
+    "featured_image": "",
+    "status": "published",
+    "featured": false,
+    "meta_title": "",
+    "meta_description": "",
+    "published_at": "2026-08-04T10:05:34.007Z"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-08-04T10:05:34.028Z",
+    "updated_at": "2026-08-10T02:54:48.909Z",
+    "title": "New Dining Menu This Summer",
+    "slug": "new-dining-menu-this-summer",
+    "excerpt": "Fresh flavours are coming to Aqua Bowl Cafe...fgjnkm",
+    "content": "flavours are coming to Aqua Bowl Cafe...fgjnkm",
+    "featured_image": "",
+    "status": "published",
+    "featured": false,
+    "meta_title": "",
+    "meta_description": "",
+    "published_at": "2026-08-04T10:05:34.025Z"
+  }
+}
+]

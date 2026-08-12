@@ -15,29 +15,68 @@ export default function Tickets() {
   const [phone, setPhone] = useState('+97126756409');
   const [whatsapp, setWhatsapp] = useState('+971527186938');
   const [bookingUrl, setBookingUrl] = useState('');
-  const [hoursLabel, setHoursLabel] = useState('1.00PM to 09.00PM');
+  // const [hoursLabel, setHoursLabel] = useState('1.00PM to 09.00PM');
+  const [weekdaysHoursLabel, setWeekdaysHoursLabel] = useState('');
+  const [weekendHoursLabel, setWeekendHoursLabel] = useState('');
 
-  useEffect(() => {
-    getTicketPricing().then((types) => {
-      const kids = types.find((t) => t.name.toLowerCase().includes('kid'));
-      const adults = types.find((t) => t.name.toLowerCase().includes('adult'));
-      if (kids) { setKidsPrice(kids.price); setCurrency(kids.currency); }
-      if (adults) setAdultsPrice(adults.price);
-    }).catch(() => {});
+useEffect(() => {
+  getTicketPricing()
+    .then((types) => {
+      const kids = types.find((t) =>
+        t.name.toLowerCase().includes("kid")
+      );
 
-    getSiteSettings().then((s) => {
+      const adults = types.find((t) =>
+        t.name.toLowerCase().includes("adult")
+      );
+
+      if (kids) {
+        setKidsPrice(kids.price);
+        setCurrency(kids.currency);
+      }
+
+      if (adults) {
+        setAdultsPrice(adults.price);
+      }
+    })
+    .catch(() => {});
+
+  getSiteSettings()
+    .then((s) => {
       if (s.phone) setPhone(s.phone);
       if (s.whatsapp_number) setWhatsapp(s.whatsapp_number);
       if (s.booking_redirect_url) setBookingUrl(s.booking_redirect_url);
-    }).catch(() => {});
+    })
+    .catch(() => {});
 
-    getWorkingHours().then((hours) => {
-      const mon = hours.find((h) => h.day === 'mon');
-      if (mon && mon.opening_time && mon.closing_time) {
-        setHoursLabel(`${formatTime12h(mon.opening_time)} to ${formatTime12h(mon.closing_time)}`);
+  getWorkingHours()
+    .then((hours) => {
+      // Monday - Friday
+      const monday = hours.find((h) => h.day === "mon");
+
+      if (monday?.opening_time && monday?.closing_time) {
+        setWeekdaysHoursLabel(
+          `${formatTime12h(monday.opening_time)} to ${formatTime12h(
+            monday.closing_time
+          )}`
+        );
       }
-    }).catch(() => {});
-  }, []);
+
+      // Saturday - Sunday
+      const saturday = hours.find((h) => h.day === "sat");
+
+      if (saturday?.opening_time && saturday?.closing_time) {
+        setWeekendHoursLabel(
+          `${formatTime12h(saturday.opening_time)} to ${formatTime12h(
+            saturday.closing_time
+          )}`
+        );
+      }
+    })
+    .catch((err) => {
+      console.error("Failed to load working hours:", err);
+    });
+}, []);
 
   const phoneDigits = phone.replace(/[^0-9+]/g, '');
   const whatsappDigits = whatsapp.replace(/[^0-9+]/g, '');
@@ -207,9 +246,12 @@ export default function Tickets() {
               </span>
               <div className="flex items-center gap-2">
                 <span className="hidden sm:inline-block w-8 h-[1px] bg-white/30"></span>
-                <span className="text-xs sm:text-sm font-semibold text-gray-300">
+                {/* <span className="text-xs sm:text-sm font-semibold text-gray-300">
                   {hoursLabel}
-                </span>
+                </span> */}
+                <span className="text-xs sm:text-sm font-semibold text-gray-300">
+  {weekdaysHoursLabel}
+</span>
               </div>
             </div>
 
@@ -220,9 +262,13 @@ export default function Tickets() {
               </span>
               <div className="flex items-center gap-2">
                 <span className="hidden sm:inline-block w-8 h-[1px] bg-white/30"></span>
-                <span className="text-xs sm:text-sm font-semibold text-gray-300">
+                {/* <span className="text-xs sm:text-sm font-semibold text-gray-300">
                   {hoursLabel}
-                </span>
+                </span> */}
+
+                <span className="text-xs sm:text-sm font-semibold text-gray-300">
+  {weekendHoursLabel}
+</span>
               </div>
             </div>
 

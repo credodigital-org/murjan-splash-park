@@ -32,10 +32,10 @@ const NAV_ITEMS = [
     to: "/admin/announcements",
     label: "Announcements",
   },
-  {
-    to: "/admin/gallery-management",
-    label: "Gallery Management",
-  },
+  // {
+  //   to: "/admin/gallery-management",
+  //   label: "Gallery Management",
+  // },
 ];
 
 export default function AdminLayout() {
