@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card3D from '../components/Card3D';
 import ScrollReveal from '../components/ScrollReveal';
-import SEO from '../components/SEO';
 // Hero Assets
 import herobg from '../assets/BirthdayPartyImages/herobg.png';
 import mainhead from '../assets/BirthdayPartyImages/herotext.png';
@@ -43,7 +42,6 @@ const handleCardClick = (clickedIndex) => {
 };
   return (
     <div className="w-full font-sans pb-0 overflow-x-hidden">
-      <SEO pageSlug="birthday-parties" defaultTitle="Birthday Parties | Murjan Splash Park" defaultDescription="Celebrate your birthday at Murjan Splash Park, Abu Dhabi." />
       
       {/* SECTION 1: HERO & MAIN HEAD OVERLAY */}
       <section className="relative w-full flex justify-center items-center">
@@ -107,15 +105,15 @@ const handleCardClick = (clickedIndex) => {
       <section className="relative z-10 w-full flex justify-center items-center px-4 sm:px-8 bg-white mb-12">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-up" delay={100}>
-            <p className="text-xs sm:text-sm md:text-base font-normal text-gray-800 leading-relaxed sm:leading-loose">
-              Have a dream of celebrating your birthday with a birthday party in water park Abu Dhabi? We make birthdays magical, filled with laughter, fun, and full of snap-worthy moments. Ready to have a splash-tastic birthday with us? Because we are! And we aim to transform ordinary birthdays into truly extraordinary events that you will be proud to share on social media. Just like our theme park and water rides, we have something for everyone here, so if you are a kid, a teen splash park birthday party with us.
-            </p>
+            <p className="text-xs sm:text-sm md:text-base font-normal text-gray-800 leading-relaxed sm:leading-loose tracking-tight [text-wrap:pretty]">
+  Have a dream of celebrating your birthday with a birthday party in water park Abu Dhabi? We make birthdays magical, filled with laughter, fun, and full of snap-worthy moments. Ready to have a splash-tastic birthday with us? Because we are! And we aim to transform ordinary birthdays into truly extraordinary events that you will be proud to share on social media. Just like our theme park and water rides, we have something for everyone here, so if you are a kid, a teen splash park birthday party with us.
+</p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* SECTION 4: BIRTHDAY PARTY PACKAGE BANNER */}
-      <section className="relative w-full px-4 sm:px-8 py-8 flex justify-center">
+      <section className="relative w-full px-4 sm:px-8 py-2 flex justify-center">
         <div className="max-w-5xl w-full">
           <ScrollReveal animation="fade-up" delay={150}>
             <div className="relative bg-[#FFEB60] rounded-[32px] p-6 sm:p-10 shadow-lg overflow-hidden">
@@ -150,6 +148,7 @@ const handleCardClick = (clickedIndex) => {
                     <p className="text-xs sm:text-sm font-semibold text-gray-700 mt-1">
                       Minimum Number of Kids : 20
                     </p>
+                    <p className="text-xs sm:text-sm font-itallian text-gray-700 mt-1">Custom Packages Also Available </p>
                   </div>
                 </div>
 
@@ -180,7 +179,7 @@ const handleCardClick = (clickedIndex) => {
                       </li>
                       <li className="flex items-center space-x-2">
                         <span className="w-1.5 h-1.5 bg-black rounded-full inline-block"></span>
-                        <span>FREE FOOD FOR KIDS INCLUDED IN PACKAGE</span>
+                        <span>"Free Kid's Meal Included in the Package"</span>
                       </li>
                     </ul>
                   </div>

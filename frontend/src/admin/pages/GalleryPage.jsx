@@ -16,21 +16,39 @@ export default function GalleryPage() {
       title="Gallery"
       service={galleryService}
       addLabel="Add Photo"
+
       columns={[
         { key: "title", label: "Title" },
         { key: "category", label: "Category" },
-        { key: "featured", label: "Featured", render: (i) => (i.featured ? "Yes" : "") },
         { key: "display_order", label: "Order" },
       ]}
+
       fields={[
-        { name: "title", label: "Title", type: "text", required: true },
-        { name: "image", label: "Image", type: "file" },
-        { name: "alt_text", label: "Alt Text (for SEO/accessibility)", type: "text" },
-        { name: "caption", label: "Caption", type: "text" },
-        { name: "category", label: "Category", type: "select", options: CATEGORY_OPTIONS },
-        { name: "display_order", label: "Display Order", type: "number" },
-        { name: "featured", label: "Also show as a card in the Home page's Attractions section (this photo will always appear on the Gallery page regardless of this setting)", type: "checkbox" },
-        { name: "link_url", label: "Link To (e.g. /attractions) — only used for homepage preview cards", type: "text" },
+        {
+          name: "title",
+          label: "Title",
+          type: "text",
+          required: true,
+        },
+
+        {
+          name: "image",
+          label: "Image",
+          type: "file",
+        },
+
+        {
+          name: "category",
+          label: "Category",
+          type: "select",
+          options: CATEGORY_OPTIONS,
+        },
+
+        {
+          name: "display_order",
+          label: "Display Order",
+          type: "number",
+        },
       ]}
     />
   );

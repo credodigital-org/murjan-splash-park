@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import logo from '../assets/HomeImages/logo.png';
 
 export default function Navbar() {
@@ -35,10 +35,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile: 72px | Tablet: 88px | Desktop: 120px */}
         <div className="flex items-center justify-between h-[72px] sm:h-[88px] lg:h-[120px]">
           
-          {/* Logo - scales per breakpoint */}
+          {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center no-underline">
             <img 
               src={logo} 
@@ -47,39 +46,42 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Links (visible ≥ 1024px) */}
+          {/* Desktop Links */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-[15px] xl:text-[17px] font-extrabold tracking-wide no-underline transition-all duration-200 hover:text-[#00A896] relative py-1 ${
-                    isActive ? 'text-[#00A896] border-b-3 border-[#00A896]' : 'text-gray-800 hover:scale-105'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                end={link.path === '/'}
+                style={({ isActive }) => ({
+                  color: isActive ? '#20C8EC' : '#000000',
+                })}
+                className="text-[15px] xl:text-[17px] font-medium tracking-normal no-underline transition-colors duration-200 py-1"
+              >
+                {link.name}
+              </NavLink>
+            ))}
           </nav>
 
-          {/* Desktop CTA (visible ≥ 1024px) */}
+          {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center">
-            <Link
+            <NavLink
               to="/tickets"
-              className="bg-[#EAE213] hover:bg-[#d4cb10] text-gray-900 font-extrabold text-sm xl:text-base px-6 xl:px-8 py-3 xl:py-3.5 rounded-full no-underline shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+              style={({ isActive }) => ({
+                backgroundColor: isActive ? '#20C8EC' : '#EAE213',
+                color: isActive ? '#FFFFFF' : '#111827',
+              })}
+              className="font-extrabold text-sm xl:text-base px-6 xl:px-8 py-3 xl:py-3.5 rounded-full no-underline shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
             >
               Book Tickets
-            </Link>
+            </NavLink>
           </div>
 
-          {/* Mobile/Tablet Toggle (visible < 1024px) */}
+          {/* Mobile/Tablet Toggle Button */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 rounded-xl text-gray-700 hover:text-cyan-600 hover:bg-gray-50 focus:outline-none transition-colors"
+              className="p-2.5 rounded-xl text-gray-700 hover:text-[#20C8EC] hover:bg-gray-50 focus:outline-none transition-colors"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
@@ -95,49 +97,50 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile/Tablet Drawer - Full-screen overlay */}
+      {/* Mobile/Tablet Drawer */}
       <div 
         className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
         style={{ top: '72px' }}
       >
-        {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/30 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Drawer Panel */}
         <div className={`relative bg-white shadow-2xl border-t border-gray-100 max-h-[calc(100vh-72px)] sm:max-h-[calc(100vh-88px)] overflow-y-auto transition-transform duration-300 ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}>
           <div className="px-5 sm:px-8 pt-4 pb-8 space-y-1">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3.5 sm:py-4 text-base sm:text-lg font-bold rounded-2xl no-underline transition-all ${
-                    isActive 
-                      ? 'text-[#00A896] bg-cyan-50' 
-                      : 'text-gray-800 hover:text-cyan-600 hover:bg-gray-50'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                end={link.path === '/'}
+                onClick={() => setIsOpen(false)}
+                style={({ isActive }) => ({
+                  color: isActive ? '#20C8EC' : '#000000',
+                  backgroundColor: isActive ? '#F0F9FF' : 'transparent',
+                })}
+                className="block px-4 py-3.5 sm:py-4 text-base sm:text-lg font-medium rounded-2xl no-underline transition-all"
+              >
+                {link.name}
+              </NavLink>
+            ))}
+            
             <div className="pt-3">
-              <Link
+              <NavLink
                 to="/tickets"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-[#EAE213] hover:bg-[#d4cb10] text-gray-900 font-extrabold px-6 py-4 rounded-2xl no-underline shadow-md text-base sm:text-lg transition-all"
+                style={({ isActive }) => ({
+                  backgroundColor: isActive ? '#20C8EC' : '#EAE213',
+                  color: isActive ? '#FFFFFF' : '#111827',
+                })}
+                className="block w-full text-center font-bold px-6 py-4 rounded-2xl no-underline shadow-md text-base sm:text-lg transition-all"
               >
                 Book Tickets
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

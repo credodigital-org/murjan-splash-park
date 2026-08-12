@@ -1,7 +1,6 @@
 import React from 'react';
 import Card3D from '../components/Card3D';
 import ScrollReveal from '../components/ScrollReveal';
-import SEO from '../components/SEO';
 
 import herobg from '../assets/AttractionImages/herobg.png';
 import mainhead from '../assets/AttractionImages/mainhead.png'; 
@@ -61,8 +60,7 @@ export default function Attraction() {
   ];
 
   return (
-    <div className="w-full font-sans bg-white pb-10 overflow-hidden">
-      <SEO pageSlug="attractions" defaultTitle="Attractions | Murjan Splash Park Abu Dhabi" defaultDescription="Explore water slides, lazy river, and kiddie splash zone." />
+    <div className="w-full bg-white pb-10 overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       
       {/* SECTION 1: HERO & MAIN HEAD */}
       <section className="relative w-full flex justify-center items-center">
@@ -84,123 +82,54 @@ export default function Attraction() {
       </section>
 
       {/* SECTION 2: SUBHEAD TEXT */}
-      <section className="relative z-10 w-full flex justify-center items-center px-4 sm:px-8 pb-8 sm:pb-12 text-center bg-white">
-        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8">
-          
-          {/* Top Heading Paragraph */}
+      <section className="relative z-10 w-full flex justify-center items-center px-4 sm:px-8 py-8 sm:py-12 text-center bg-white">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           <ScrollReveal animation="fade-up" delay={0}>
-            <p className="text-xs sm:text-base md:text-lg font-bold text-gray-900 leading-relaxed">
-              Welcome to Murjan Splash Park, the best water park for families in Abu Dhabi! We have done a lot of research to make our park the most sought after spot for family water games Abu Dhabi, and we invite you to come and enjoy it.
-            </p>
+            <p className="text-xs sm:text-sm md:text-base font-normal text-slate-500 leading-relaxed sm:leading-loose">
+  Welcome to Murjan Splash Park, the best water park for families in Abu Dhabi! We have done a lot of research to make our park the most sought after spot for family water games Abu Dhabi, and we invite you to come and enjoy it.<br/>
+  The main attraction at Murjan Splash Park, the best water park for families in Abu Dhabi is the children’s play structure situated in a shallow pool. This vibrant area boasts of a number of fun activities through its four small water slides, a colossal tipping bucket, a crawl tunnel, water guns, a water umbrella, small tipping buckets, a water wheel, and refreshing water showers.
+</p>
           </ScrollReveal>
 
-          {/* Bottom Body Paragraph */}
-          <ScrollReveal animation="fade-up" delay={100}>
-            <p className="text-[11px] sm:text-sm md:text-base font-medium text-gray-800 leading-relaxed">
+          {/* <ScrollReveal animation="fade-up" delay={100}>
+            <p className="text-sm sm:text-base md:text-lg font-normal text-slate-600 leading-relaxed sm:leading-loose">
               The main attraction at Murjan Splash Park, the best water park for families in Abu Dhabi is the children’s play structure situated in a shallow pool. This vibrant area boasts of a number of fun activities through its four small water slides, a colossal tipping bucket, a crawl tunnel, water guns, a water umbrella, small tipping buckets, a water wheel, and refreshing water showers.
             </p>
-          </ScrollReveal>
-
+          </ScrollReveal> */}
         </div>
       </section>
 
-      {/* SECTION 3: WATER SLIDES & LAZY RIVER */}
+      {/* SECTION 3: ALTERNATING ATTRACTIONS */}
       <section className="relative w-full bg-white py-0">
   
-        {/* ROW 1: WATER SLIDES (Image Left, Text Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          {/* Left Side: Photo */}
-          <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img1}
-                  alt="Water Slides"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
+        {/* ROW 1: WATER SLIDES */}
+        <div className="relative w-full flex flex-col md:flex-row items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img1}
+                    alt="Water Slides"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
+
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  WATER SLIDES
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “The water slides at the park is perfect for kids looking for gentle fun, with slow gentle slope and shallow water at the bottom. Its designed for young children's to enjoy safely. Brightly coloured and easy to climb and always under the supervision of our lifeguards.”
+                </p>
               </div>
-            </Card3D>
-          </ScrollReveal>
-
-          {/* Right Side: Text Description */}
-          <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                WATER SLIDES
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "THE WATER SLIDES AT THE PARK IS PERFECT FOR KIDS LOOKING FOR GENTLE FUN. WITH SLOW GENTLE SLOPE AND SHALLOW WATER AT THE BOTTOM, ITS DESIGNED FOR YOUNG CHILDREN'S TO ENJOY SAFELY. BRIGHTLY COLOURED AND EASY TO CLIMB AND ALWAYS UNDER THE SUPERVISION OF OUR LIFEGUARDS."
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Wave Overlay */}
-          <img
-            src={unionWave}
-            alt=""
-            className="absolute -bottom-1 sm:-bottom-2 md:-bottom-3 lg:-bottom-4 left-0 w-full h-auto pointer-events-none z-20 block object-cover"
-          />
-        </div>
-
-        {/* ROW 2: LAZY RIVER (Text Left, Image Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          {/* Left Side: Text Description */}
-          <ScrollReveal animation="slide-left" delay={100} className="w-full h-full order-1">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                LAZY RIVER
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "IMMERSE YOURSELF IN LEISURE AT OUR FAMILY WATER PARK ABU DHABI. OUR WELL-MAINTAINED, CLEAN AND HYGIENIC 257-METER LAZY RIVER, GENTLY WINDS ITS WAY THROUGH THE PARK AT A DEPTH OF 0.6 METERS. YOU CAN TAKE ONE OF OUR TUBES, SECURE YOURSELF INSIDE IT, AND LET THE TRANQUIL CURRENTS GUIDE YOU THROUGH THE SCENIC TWISTS AND TURNS OF THIS WATER OASIS. IT'S THE PERFECT WAY TO UNWIND AND ENJOY A CAREFREE JOURNEY SURROUNDED BY THE BEAUTY OF MURJAN'S PICTURESQUE LANDSCAPES."
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Right Side: Photo (img2) */}
-          <ScrollReveal animation="slide-right" delay={0} className="w-full h-full order-2">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img2}
-                  alt="Lazy River"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
-              </div>
-            </Card3D>
-          </ScrollReveal>
-
-          {/* Wave Overlay */}
-          <img
-            src={unionWave}
-            alt=""
-            className="absolute -bottom-1 sm:-bottom-2 md:-bottom-3 lg:-bottom-4 left-0 w-full h-auto pointer-events-none z-20 block object-cover"
-          />
-        </div>
-
-        {/* ROW 3: ATTRACTION 3 (Image Left, Text Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img3}
-                  alt="Attraction 3"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
-              </div>
-            </Card3D>
-          </ScrollReveal>
-
-          <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Swimming Pool
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "Indulge in fun at the family water games Abu Dhabi spot at Murjan. Dive into a world of relaxation and fun for all ages! Our swimming pools offer refreshing escapes for both adults and kids alike, where every splash is a moment of joy and every swim is a memory in the making. Join us for endless aquatic adventures and unforgettable family moments!"
-              </p>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -209,30 +138,34 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 4: ATTRACTION 4 (Text Left, Image Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={100} className="w-full h-full order-1">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Bumper Boats
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "Navigate the waters with our small, steerable, battery-operated boats designed for kids! Watch with pride as the little captains take control, and skillfully ‘drive’ around in a pool of water, engaging in playful and gentle collisions. It's the perfect blend of fun and skill, providing a delightful experience for young sailors to enjoy a safe and interactive aquatic adventure."
-              </p>
-            </div>
-          </ScrollReveal>
+        {/* ROW 2: LAZY RIVER */}
+        <div className="relative w-full flex flex-col md:flex-row-reverse items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-right" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img2}
+                    alt="Lazy River"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={0} className="w-full h-full order-2">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img4}
-                  alt="Attraction 4"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-left" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  LAZY RIVER
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “Immerse yourself in leisure at our family water park Abu Dhabi. Our well-maintained, clean and hygienic 257-meter lazy river, gently winds its way through the park at a depth of 0.6 meters. You can take one of our tubes, secure yourself inside it, and let the tranquil currents guide you through the scenic twists and turns of this water oasis. It's the perfect way to unwind and enjoy a carefree journey surrounded by the beauty of Murjan's picturesque landscapes.”
+                </p>
               </div>
-            </Card3D>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -241,30 +174,34 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 5: ATTRACTION 5 (Image Left, Text Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img5}
-                  alt="Attraction 5"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
-              </div>
-            </Card3D>
-          </ScrollReveal>
+        {/* ROW 3: SWIMMING POOL */}
+        <div className="relative w-full flex flex-col md:flex-row items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img3}
+                    alt="Swimming Pool"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Rainbow Arches
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                The Rainbow Arch is the highlight of Murjan Splash Park, one of the best water park for families in Abu Dhabi. Dive into the ultimate aquatic adventure with our splash pool game! Experience a refreshing burst of fun as you splash, play, and soak up the excitement in this water-filled paradise. Get ready to make a splash at the family fun splash water park, and create unforgettable memories with friends and family!
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  SWIMMING POOL
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “Indulge in fun at the family water games Abu Dhabi spot at Murjan. Dive into a world of relaxation and fun for all ages! Our swimming pools offer refreshing escapes for both adults and kids alike, where every splash is a moment of joy and every swim is a memory in the making. Join us for endless aquatic adventures and unforgettable family moments!”
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -273,30 +210,34 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 6: ATTRACTION 6 (Text Left, Image Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={100} className="w-full h-full order-1">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Kids Pool
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "The shallow kids' pool is designed for young children to enjoy a safe and fun water experience. With gentle, shallow waters and soft, non-slip surfaces, it’s the perfect spot for toddlers to splash, play, and explore. Surrounded by bright, colourful features. The pool provides a calm, secure environment for little ones to enjoy the water in a relaxed and enjoyable setting."
-              </p>
-            </div>
-          </ScrollReveal>
+        {/* ROW 4: BUMPER BOATS */}
+        <div className="relative w-full flex flex-col md:flex-row-reverse items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-right" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img4}
+                    alt="Bumper Boats"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={0} className="w-full h-full order-2">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img6}
-                  alt="Attraction 6"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-left" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  BUMPER BOATS
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “Navigate the waters with our steerable, battery-operated boats designed for kids! Watch with pride as little captains take control and drive around engaging in playful and gentle collisions.”
+                </p>
               </div>
-            </Card3D>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -305,30 +246,34 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 7: ATTRACTION 7 (Image Left, Text Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img7}
-                  alt="Attraction 7"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
-              </div>
-            </Card3D>
-          </ScrollReveal>
+        {/* ROW 5: RAINBOW ARCHES */}
+        <div className="relative w-full flex flex-col md:flex-row items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img5}
+                    alt="Rainbow Arches"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Splash Pool
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "The splash pool is a fun-filled, interactive water play area designed for kids. Featuring playful water umbrellas that release refreshing streams of water and water guns for added excitement, this pool is perfect for little ones to cool off and get soaked in a safe, shallow environment. With its colourful, vibrant design, the splash pool offers endless entertainment as children enjoy splashing under the umbrellas and spraying each other with water guns, making it an ideal spot for fun and laughter.​"
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  RAINBOW ARCHES
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “The rainbow arch is a highlight of Murjan Splash Park. Dive into the ultimate aquatic adventure with our splash pool game and experience a refreshing burst of fun!”
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -337,30 +282,70 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 8: ATTRACTION 8 (Text Left, Image Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={100} className="w-full h-full order-1">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Family slide
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                Get ready for bigger splashes and even bigger excitement with our Mega Slides at Murjan Splash Park! Designed for thrill-seekers of all ages, these towering slides deliver fast-paced fun, exciting twists, and unforgettable water adventures. Whether you're racing down with friends or taking on the challenge yourself, the Mega Slides are the perfect way to add extra excitement to your day at Abu Dhabi's favorite family water park. Bigger Slides. More Fun. More Adventure.
-              </p>
-            </div>
-          </ScrollReveal>
+        {/* ROW 6: KIDS POOL */}
+        <div className="relative w-full flex flex-col md:flex-row-reverse items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-right" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img6}
+                    alt="Kids Pool"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={0} className="w-full h-full order-2">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img8}
-                  alt="Attraction 8"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-left" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  KIDS POOL
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “The shallow kids' pool is designed for young children to enjoy a safe and fun water experience with gentle waters, soft non-slip surfaces, and bright, colorful features.”
+                </p>
               </div>
-            </Card3D>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
+
+          <img
+            src={unionWave}
+            alt=""
+            className="absolute -bottom-3 sm:-bottom-3 md:-bottom-4 lg:-bottom-6 left-0 w-full h-auto pointer-events-none z-20 block object-cover"
+          />
+        </div>
+
+        {/* ROW 7: SPLASH POOL */}
+        <div className="relative w-full flex flex-col md:flex-row items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img7}
+                    alt="Splash Pool"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
+
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  SPLASH POOL
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “Featuring playful water umbrellas and water guns, this pool is perfect for little ones to cool off and get soaked in a safe, colorful environment.”
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
 
           <img
             src={unionWave}
@@ -369,30 +354,70 @@ export default function Attraction() {
           />
         </div>
 
-        {/* ROW 9: ATTRACTION 9 (Image Left, Text Right) */}
-        <div className="relative w-full grid grid-cols-2 items-stretch">
-          <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
-            <Card3D intensity={10} className="w-full h-full">
-              <div className="w-full h-full relative overflow-hidden">
-                <img
-                  src={img9}
-                  alt="Attraction 9"
-                  className="w-full h-full object-cover block min-h-[200px]"
-                />
-              </div>
-            </Card3D>
-          </ScrollReveal>
+        {/* ROW 8: FAMILY SLIDE */}
+        <div className="relative w-full flex flex-col md:flex-row-reverse items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-right" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img8}
+                    alt="Family Slide"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
 
-          <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center p-3 sm:p-8 md:p-12 bg-white">
-              <h2 className="text-xs sm:text-2xl md:text-3xl font-bold tracking-wider uppercase text-[#29b6d8] mb-2 sm:mb-4 border-b-2 border-[#29b6d8] inline-block pb-1">
-                Foam Party
-              </h2>
-              <p className="max-w-md text-[10px] sm:text-sm md:text-base leading-tight sm:leading-relaxed text-gray-800 font-medium uppercase">
-                "A Foam filled water party at the park is the ultimate way to celebrate with family and friends, the water park creates a vibrant, lively setting where guests of all ages can enjoy water games, dancing, and endless fun. Were the foam being entirely safe for all the guests."
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-left" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  FAMILY SLIDE
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “Towering slides that deliver fast-paced fun, exciting twists, and unforgettable water adventures. Bigger slides, more fun, more adventure!”
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <img
+            src={unionWave}
+            alt=""
+            className="absolute -bottom-3 sm:-bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-full h-auto pointer-events-none z-20 block object-cover"
+          />
+        </div>
+
+        {/* ROW 9: FOAM PARTY */}
+        <div className="relative w-full flex flex-col md:flex-row items-stretch">
+          <div className="w-full md:w-1/2">
+            <ScrollReveal animation="slide-left" delay={0} className="w-full h-full">
+              <Card3D intensity={10} className="w-full h-full">
+                <div className="w-full h-full relative overflow-hidden min-h-[280px] sm:min-h-[360px]">
+                  <img
+                    src={img9}
+                    alt="Foam Party"
+                    className="w-full h-full object-cover block"
+                  />
+                </div>
+              </Card3D>
+            </ScrollReveal>
+          </div>
+
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <ScrollReveal animation="slide-right" delay={100} className="w-full h-full">
+              <div className="w-full h-full flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-14 bg-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#20C8EC] tracking-wide mb-3 uppercase border-b-2 border-[#20C8EC] pb-1 inline-block">
+                  FOAM PARTY
+                </h2>
+                <p className="max-w-md text-[11px] sm:text-[13px] md:text-[14px] font-normal italic text-slate-500 leading-relaxed tracking-normal normal-case">
+                  “A vibrant, lively setting with 100% safe foam where guests of all ages can enjoy water games, dancing, and endless fun.”
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
 
       </section>
@@ -402,17 +427,18 @@ export default function Attraction() {
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="max-w-7xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] p-6 sm:p-10 lg:p-16">
             
-            {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#38C6DF] tracking-tight mb-3 sm:mb-4">
+              <p className="text-[10px] sm:text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1.5 sm:mb-2">
+                DINING &amp; SHOPPING
+              </p>
+              <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#20C8EC] tracking-tight mb-3 sm:mb-4">
                 Murjan Splash Park Restaurants &amp; Retail Outlets
               </h2>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-xs sm:text-sm lg:text-base font-normal leading-relaxed">
                 Recharge and refresh with our wide selection of dining and shopping options, designed to keep the fun flowing all day long.
               </p>
             </div>
 
-            {/* Outlets Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
               {outletsData.map((item) => (
                 <div
@@ -421,21 +447,18 @@ export default function Attraction() {
                     item.isWide ? 'lg:col-span-2' : 'lg:col-span-1'
                   }`}
                 >
-                  {/* Rounded Icon Container with Hover Zoom */}
-{/* Rounded Icon Container */}
-<div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full bg-[#CCF5FD] flex items-center justify-center mb-5 sm:mb-6 flex-shrink-0">
-  <img
-    src={item.icon}
-    alt={item.title}
-    className="w-20 h-20 sm:w-20 sm:h-20 object-contain"
-  />
-</div>
+                  <div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full bg-[#CCF5FD] flex items-center justify-center mb-5 sm:mb-6 flex-shrink-0">
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      className="w-20 h-20 sm:w-20 sm:h-20 object-contain"
+                    />
+                  </div>
 
-                  {/* Details */}
-                  <h3 className="text-base sm:text-lg font-bold text-[#38C6DF] mb-2 sm:mb-3">
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 sm:mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-md">
+                  <p className="text-slate-600 text-xs sm:text-sm font-normal italic leading-relaxed max-w-md">
                     {item.description}
                   </p>
                 </div>

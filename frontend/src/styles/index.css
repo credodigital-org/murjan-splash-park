@@ -18,6 +18,7 @@ body {
   overflow-x: hidden !important;
   font-family: system-ui, -apple-system, sans-serif;
 }
+
 /* Continuous Sliding Ticker Animation */
 @keyframes ticker {
   0% {
@@ -61,6 +62,53 @@ body {
 
 .animate-hero-float {
   animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* 3D Depth Zoom & Tilt Animation */
+@keyframes slowDepthZoom {
+  0% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg) translateY(0px);
+  }
+  50% {
+    transform: scale(1.08) rotateX(2deg) rotateY(-1.5deg) translateY(-8px);
+  }
+  100% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg) translateY(0px);
+  }
+}
+
+.animate-3d-zoom {
+  animation: slowDepthZoom 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Seamlessly blends image bottom fade into pure white */
+.hero-bottom-blend {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Pendulum Clock Swing Motion - Fluid & Continuous */
+/* Pendulum Clock Swing Motion - Perfectly Symmetrical & Fluid */
+@keyframes pendulumSwing {
+  0% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+.animate-pendulum {
+  /* Enforces exact center alignment along the top boundary */
+  transform-origin: 50% 0%;
+  /* Perfect sine curve for symmetrical pendulum physics */
+  animation: pendulumSwing 4.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  will-change: transform;
 }
 
 /* Wave Shimmer Effect */
@@ -148,9 +196,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Optional: Respect user system settings for reduced motion */
+/* Respect user system settings for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-3d-zoom,
+  .animate-pendulum,
+  .animate-hero-float,
+  .animate-ticker,
+  .shimmer-effect,
+  .bubble-1,
+  .bubble-2,
+  .bubble-3,
+  .bubble-4,
+  .animate-btn-glow {
+    animation: none !important;
   }
 }

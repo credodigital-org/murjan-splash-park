@@ -1,6 +1,5 @@
 import React from 'react';
 import ScrollReveal from '../components/ScrollReveal';
-import SEO from '../components/SEO';
 
 // Hero Assets
 import herobg from '../assets/ParkRuleImages/herobg.png';
@@ -12,7 +11,6 @@ import notAllowedSwimwearImg from '../assets/ParkRuleImages/notallowed.png';
 export default function ParkRules() {
   return (
     <div className="w-full font-sans pb-0 overflow-x-hidden bg-white">
-      <SEO pageSlug="park-rules" defaultTitle="Park Rules | Murjan Splash Park" defaultDescription="Please review our park rules before your visit." />
 
       {/* SECTION 1: HERO AREA */}
       <section className="relative w-full flex justify-center items-center bg-[#F4FCFE] min-h-[280px] sm:min-h-[340px]">
@@ -45,79 +43,133 @@ export default function ParkRules() {
         </div>
       </section>
 
-      {/* SECTION 2: EXACT RULES & REGULATIONS FROM SIGNBOARD (BILINGUAL) */}
+      {/* SECTION 2: EXACT RULES & REGULATIONS FROM IMAGE */}
       <section className="relative w-full px-4 sm:px-8 py-10 sm:py-16 bg-[#F4FCFE] flex flex-col items-center">
-        <div className="max-w-5xl w-full bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-cyan-100/60">
+        <div className="max-w-5xl w-full bg-[#F4FCFE] sm:bg-white rounded-3xl p-6 sm:p-12 shadow-sm border border-cyan-100/60">
           
           <ScrollReveal animation="fade-up" delay={100}>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#00BCDE] mb-2">
+            {/* Main Section Title */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#00BCDE] tracking-tight mb-4">
               Park Rules & Regulations
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 font-medium mb-6">
-Your safety and enjoyment are our top priorities.            </p>
+            
+            {/* Sub-heading intro */}
+            <p className="text-base sm:text-lg font-medium text-gray-800 mb-6">
+              Parents and guardians, please read the sign boards and explain them to your children.
+            </p>
+
+            {/* Condition warning banner line */}
+            <p className="text-[#FF4D8D] font-medium text-base sm:text-lg mb-6">
+              The following rules are a condition of entry:
+            </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm sm:text-base leading-relaxed">
-            
-            {/* ENGLISH COLUMN */}
-            <ScrollReveal animation="fade-right" delay={150} className="flex flex-col text-left">
-              <p className="text-[#FF4D8D] font-bold mb-4">
-                The following rules are a condition of entry:
-              </p>
-              <ul className="list-disc pl-5 space-y-2.5 text-gray-800">
-                <li>Entrance fee for ADULTS is 40 and CHILDREN is AED 85.</li>
-                <li>Children below 2 years old or 0.75 cm and below are FREE.</li>
-                <li>Children under 13 years of age must be accompanied by an adult. NO ADULT NO ENTRY.</li>
-                <li>Appropriate swimwear must be worn at all times (no street clothing, underwear, all adults need to wear a rash guard or T-Shirt and ladies need to wear swim shorts or leggings, men without T-shirt not allowed also women with Bikini not allowed).</li>
-                <li>Children of Diaper age need to wear Waterproof Diapers, regular diapers are not permitted in any of our pools or attractions. Waterproof Diapers are available in our retail outlet.</li>
-                <li>Locker rental is available for your convenience; please do not leave valuables unattended.</li>
-                <li>Murjan Splash Park accepts no responsibility for any loss or damage of personal items.</li>
-                <li>Strictly No Outside Food & Beverages or any glass items are allowed to be brought inside the park. You can deposit your food at the Murjan entrance and can only collect it when go home.</li>
-                <li>No Smoking inside Murjan Splash Park.</li>
-                <li>No Fighting or Abusive language.</li>
-                <li>No Running or Diving.</li>
-                <li>No unruly behaviour or Horseplay.</li>
-                <li>No Queue Jumping.</li>
-              </ul>
-            </ScrollReveal>
+          {/* ENGLISH RULES LIST */}
+          <ScrollReveal animation="fade-up" delay={150}>
+            <ul className="list-disc pl-6 space-y-3 text-gray-800 text-sm sm:text-base leading-relaxed font-normal mb-16">
+              <li>
+                Entrance fee for ADULTS is 40 and CHILDREN is AED 85.
+              </li>
+              <li>
+                Children below 2 years old or 0.75 cm and below are FREE.
+              </li>
+              <li>
+                Children under 13 years of age must be accompanied by an adult. NO ADULT NO ENTRY.
+              </li>
+              <li>
+                Appropriate swimwear must be worn at all times (no street clothing, underwear, all adults need to wear a rash guard or T-Shirt and ladies need to wear swim shorts or leggings,men without T-shirt not allowed also women with Bikini not allowed).
+              </li>
+              <li>
+                Children of Diaper age need to wear Waterproof Diapers, regular diapers are not permitted in any of our pools or attractions. Waterproof Diapers are available in our retail outlet.
+              </li>
+              <li>
+                Locker rental is available for your convenience; please do not leave valuables unattended.
+              </li>
+              <li>
+                Murjan Splash Park accepts no responsibility for any loss or damage of personal items.
+              </li>
+              <li>
+                Strictly No Outside Food & Beverages or any glass items are allowed to be brought inside the park. You can deposit your food at the Murjan entrance and can only collect it when go home.
+              </li>
+              <li>
+                No Smoking inside Murjan Splash Park.
+              </li>
+              <li>
+                No Fighting or Abusive language.
+              </li>
+              <li>
+                No Running or Diving.
+              </li>
+              <li>
+                No unruly behaviour or Horseplay.
+              </li>
+              <li>
+                No Queue Jumping.
+              </li>
+            </ul>
+          </ScrollReveal>
 
-            {/* ARABIC COLUMN (RTL) */}
-            <ScrollReveal animation="fade-left" delay={200} className="flex flex-col text-right dir-rtl" dir="rtl">
-              <p className="text-[#FF4D8D] font-bold mb-4">
-                من أجل الاستمتاع بأجمل الأوقات وبإتباعك للقواعد العامة للمنتزه, سوف تساعدنا في جهودنا في الحفاظ على حديقة نظيفة، وصحية، وممتعة.
-              </p>
-              <p className="font-semibold text-gray-800 mb-2">لذلك يرجى اتباع القواعد الاتيه :</p>
-              
-              <ul className="list-none space-y-2 text-gray-800 pr-0">
-                <li>رسوم الدخول للبالغين 40 درهم, وللأطفال 85 درهم.</li>
-                <li>الأطفال الذين يقل طولهم عن 0.75 متر الدخول مجاني.</li>
-                <li>الأطفال دون عمر (13) عاما يجب أن يكونوا برفقة شخص بالغ .</li>
-                <li className="font-bold text-[#FF4D8D]">تقع مسؤولية الاطفال علي عاتق ذويهم.</li>
-                <li>إدارة الحديقة غير مسؤولة عن أي مفقودات أو أضرار او اصابات ناتجه عن عدم اتباع تعليمات الامن والسلامة الخاصة بالحديقة.</li>
-                <li>يتوفر خزائن بالإيجار لوضع الاغراض والممتلكات الشخصية.</li>
-                <li>يتوفر حفاظات خاصه للماء داخل الحديقة عند منفذ البيع .</li>
-                <li>الملابس الواجب ارتداؤها : كما هو موضح بالصورة .</li>
-              </ul>
+          {/* ARABIC RULES LIST (RIGHT-ALIGNED) */}
+          <ScrollReveal animation="fade-up" delay={200} className="text-right" dir="rtl">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+              قواعد وأنشطة الحديقة
+            </h3>
 
-              <p className="font-semibold text-gray-800 mt-5 mb-2">
-                نود اعلامكم بأنه يحظر الاتي في الحديقة الالعاب المائية:
-              </p>
-              
-              <ul className="list-none space-y-1.5 text-gray-800 pr-0">
-                <li>الأغذية والمشروبات الخارجية أو أي مواد زجاجية</li>
-                <li>يمنع ارتداء الأطفال للحفاظات العادية داخل المياه</li>
-                <li>التدخين بأنواعه .</li>
-                <li>الجري أو الغوص او القفز.</li>
-                <li>اي سلوك غير مناسب للعادات والتقاليد.</li>
-                <li>ممنوع منعا باتا التقاط اي صور أو فيديوهات داخل حديقه مرجان للألعاب المائيه في اليوم المخصص للنساء .</li>
-              </ul>
+            <p className="text-sm sm:text-base font-medium text-gray-800 mb-4">
+              يرجى من أولياء الأمور والمرافقين قراءة اللوحات الإرشادية وشرحها لأطفالهم.
+            </p>
 
-              <p className="font-bold text-[#00BCDE] mt-6 text-center">
-                شاكرين لكم حسن تعاونكم
-              </p>
-            </ScrollReveal>
+            <p className="text-[#FF4D8D] font-medium text-sm sm:text-base mb-4">
+              القواعد التالية هي شروط أساسية للدخول:
+            </p>
 
-          </div>
+            <ul className="list-none pr-0 space-y-3 text-gray-800 text-sm sm:text-base leading-relaxed font-normal">
+  <li>
+    رسوم الدخول للبالغين 40 درهماً إماراتياً، وللأطفال 85 درهماً إماراتياً.
+  </li>
+  <li>
+    الدخول مجاني للأطفال دون عمر سنتين أو بطول 75 سم أو أقل.
+  </li>
+  <li>
+    يجب أن يكون الأطفال دون سن 13 عاماً برفقة شخص بالغ، لا يُسمح بدخول البالغين دون أطفال.
+  </li>
+  <li>
+    يجب ارتداء ملابس سباحة مناسبة في جميع الأوقات. لا يُسمح بارتداء ملابس الشارع أو الملابس الداخلية. يجب على جميع البالغين ارتداء واقي سباحة (Rash Guard) أو قميص سباحة، كما يُسمح للسيدات بارتداء ملابس سباحة محتشمة أو ليجنز بطول ثلاثة أرباع. لا يُسمح بارتداء ملابس السباحة ذات طراز البيكيني.
+  </li>
+  <li>
+    يجب على الأطفال في سن الحفاض ارتداء حفاضات سباحة مقاومة للماء. لا يُسمح باستخدام الحفاضات العادية في أي من المسباح أو الألعاب المائية. تتوفر حفاضات السباحة المقاومة للماء للشراء من منفذ البيع لدينا.
+  </li>
+  <li>
+    تتوفر خزائن لحفظ الأغراض لراحتكم. يرجى عدم ترك الأغراض الثمينة دون مراقبة.
+  </li>
+  <li>
+    لا تتحمل حديقة مرجان المائية (Murjan Splash Park) أي مسؤولية عن فقدان أو تلف الأغراض الشخصية.
+  </li>
+  <li>
+    يُمنع منعاً باتاً إدخال الأطعمة والمشروبات من الخارج أو أي مواد زجاجية إلى داخل الحديقة. يمكن إيداع الأطعمة عند مدخل حديقة مرجان واستلامها عند المغادرة.
+  </li>
+  <li>
+    يُمنع التدخين داخل حديقة مرجان المائية.
+  </li>
+  <li>
+    يُمنع الشجار أو استخدام الألفاظ المسيئة.
+  </li>
+  <li>
+    يُمنع الركض أو الغوص.
+  </li>
+  <li>
+    يُمنع السلوك غير اللائق أو اللعب العنيف.
+  </li>
+  <li>
+    يُمنع تجاوز دورك في طوابير الانتظار.
+  </li>
+</ul>
+
+            <p className="text-xs sm:text-sm text-gray-500 mt-8">
+              العبارة الموجودة أسفل القواعد
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
