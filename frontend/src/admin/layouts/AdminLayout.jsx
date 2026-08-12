@@ -8,10 +8,10 @@ const NAV_ITEMS = [
     label: "Dashboard",
     end: true,
   },
-  {
-    to: "/admin/overview",
-    label: "Website Overview",
-  },
+  // {
+  //   to: "/admin/overview",
+  //   label: "Website Overview",
+  // },
   {
     to: "/admin/gallery",
     label: "Gallery",
