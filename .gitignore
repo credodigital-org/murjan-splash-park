@@ -79,3 +79,5 @@ frontend-demo/
 
 # Old demo frontend - do not commit
 frontend-demo/
+
+*.zip
