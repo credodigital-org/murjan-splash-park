@@ -19,10 +19,23 @@ class BlogPost(TimeStampedModel):
 
     published_at = models.DateTimeField(blank=True, null=True)
 
+    # def save(self, *args, **kwargs):
+    #     if not self.slug:
+    #         self.slug = slugify(self.title)
+    #     super().save(*args, **kwargs)
+
+    # def __str__(self):
+    #     return self.title
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
 
-    def __str__(self):
-        return self.title
+        if self.status == "published" and self.published_at is None:
+            from django.utils import timezone
+            self.published_at = timezone.now()
+
+        elif self.status == "draft":
+            self.published_at = None
+
+        super().save(*args, **kwargs)

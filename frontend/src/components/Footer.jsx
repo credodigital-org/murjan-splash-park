@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import ScrollReveal from './ScrollReveal';
-import { getSiteSettings } from '../services/settingsService';
+import ScrollReveal from './ScrollReveal'; // Adjust path if needed
 
 import waveTop from '../assets/HomeImages/wave-top.png';
 import footerLogo from '../assets/HomeImages/footer-logo.png';
@@ -10,18 +9,6 @@ import instagramIcon from '../assets/HomeImages/instagram-icon.png';
 import facebookIcon from '../assets/HomeImages/facebook-icon.png';
 
 export default function Footer() {
-  const [settings, setSettings] = useState(null);
-
-  useEffect(() => {
-    getSiteSettings().then(setSettings).catch(() => {});
-  }, []);
-
-  const footerText = settings?.footer_text || "The region's premier family water park experience — open daily, creating memories since 2013.";
-  const siteName = settings?.site_name || 'Murjan Splash Park';
-  const address = settings?.address || 'Inside Khalifa park,Opp. FAB ,Abu dhabi';
-  const instagramUrl = settings?.instagram_url || 'https://www.instagram.com/murjansplashpark?igsh=cmdwNW5ubGp6emVv';
-  const facebookUrl = settings?.facebook_url || 'https://www.facebook.com/MurjanSplashParkOfficial/';
-  const copyrightText = settings?.copyright_text || '© 2026 Murjan Splash Park. All rights reserved.';
   return (
     <footer className="relative w-full bg-[#FFE000] pt-10 sm:pt-14 lg:pt-20 pb-6 sm:pb-10 lg:pb-12 mt-8 sm:mt-12 lg:mt-16">
       <img 
@@ -40,19 +27,19 @@ export default function Footer() {
               </div>
 
               <p className="text-xs sm:text-sm leading-relaxed text-gray-800 font-medium max-w-sm mt-3 sm:mt-4">
-                {footerText}
+                The region's premier family water park experience — open daily, creating memories since 2013.
               </p>
 
               <div className="text-xs sm:text-sm space-y-0.5 sm:space-y-1 text-gray-800 font-medium mt-3 sm:mt-4">
-                <p className="font-bold text-gray-900 mb-0.5 sm:mb-1">{siteName}</p>
-                <p>{address}</p>
+                <p className="font-bold text-gray-900 mb-0.5 sm:mb-1">Murjan Splash Park</p>
+                <p>Inside Khalifa park,Opp. FAB ,Abu dhabi</p>
               </div>
 
               <div className="flex items-center space-x-3 pt-3 sm:pt-4">
-                <a href={instagramUrl} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center shadow-xs hover:scale-110 transition-transform">
+                <a href="https://www.instagram.com/murjansplashpark?igsh=cmdwNW5ubGp6emVv" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center shadow-xs hover:scale-110 transition-transform">
                   <img src={instagramIcon} alt="Instagram" className="w-4 h-4 object-contain brightness-0 invert" />
                 </a>
-                <a href={facebookUrl} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center shadow-xs hover:scale-110 transition-transform">
+                <a href="https://www.facebook.com/MurjanSplashParkOfficial/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center shadow-xs hover:scale-110 transition-transform">
                   <img src={facebookIcon} alt="Facebook" className="w-4 h-4 object-contain brightness-0 invert" />
                 </a>
               </div>
@@ -70,12 +57,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-black/10 pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-gray-700 space-y-2 sm:space-y-0 text-center sm:text-left">
-          <p>{copyrightText}</p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-6 font-medium">
+          <p>© 2026 Murjan Splash Park. All rights reserved.</p>
+          {/* <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-6 font-medium">
             <Link to="/privacy-policy" className="hover:underline no-underline text-gray-700">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:underline no-underline text-gray-700">Terms of Service</Link>
             <Link to="/cookie-settings" className="hover:underline no-underline text-gray-700">Cookie Settings</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

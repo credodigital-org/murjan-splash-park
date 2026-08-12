@@ -12,7 +12,6 @@ export default function ScrollReveal({
   const ref = useRef(null);
 
   useEffect(() => {
-    const node = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -20,12 +19,12 @@ export default function ScrollReveal({
       { threshold, rootMargin: '0px 0px -20px 0px' }
     );
 
-    if (node) {
-      observer.observe(node);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
-      if (node) observer.unobserve(node);
+      if (ref.current) observer.unobserve(ref.current);
     };
   }, [threshold]);
 
