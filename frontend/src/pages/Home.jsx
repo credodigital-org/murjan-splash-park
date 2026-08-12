@@ -58,27 +58,89 @@ export default function Home() {
   const localImageFallbacks = { 'Water Slides': slide, 'Lazy River': river, 'Kiddie Splash Zone': splash, 'Family Slides': family };
   const localFeatureFallbacks = { 'Safe for Families': safeFamilies, 'Exciting Attractions': excitingAttractions, 'Delicious Dining': deliciousDining, 'Pristine Facilities': pristineFacilities };
 
-  const attractionsData = homeData
-    ? homeData.gallery.filter((g) => g.featured).map((g) => ({
-        id: g.id, title: g.title, description: g.caption, image: g.image || localImageFallbacks[g.title] || slide, link: g.link_url || '/attractions',
-      }))
-    : [
-        { id: 1, title: 'Water Slides', description: 'Adrenaline-pumping slides for thrill seekers of every age.', image: slide, link: '/attractions' },
-        { id: 2, title: 'Lazy River', description: 'Drift through scenic waterways at your own peaceful pace.', image: river, link: '/attractions' },
-        { id: 3, title: 'Kiddie Splash Zone', description: 'Safe, joyful water play designed for little ones.', image: splash, link: '/attractions' },
-        { id: 4, title: 'Family Slides', description: 'More Family fun Awaits with three new slides', image: family, link: '/dining' },
-      ];
+  // const attractionsData = homeData
+  //   ? homeData.gallery.filter((g) => g.featured).map((g) => ({
+  //       id: g.id, title: g.title, description: g.caption, image: g.image || localImageFallbacks[g.title] || slide, link: g.link_url || '/attractions',
+  //     }))
+  //   : [
+  //       { id: 1, title: 'Water Slides', description: 'Adrenaline-pumping slides for thrill seekers of every age.', image: slide, link: '/attractions' },
+  //       { id: 2, title: 'Lazy River', description: 'Drift through scenic waterways at your own peaceful pace.', image: river, link: '/attractions' },
+  //       { id: 3, title: 'Kiddie Splash Zone', description: 'Safe, joyful water play designed for little ones.', image: splash, link: '/attractions' },
+  //       { id: 4, title: 'Family Slides', description: 'More Family fun Awaits with three new slides', image: family, link: '/dining' },
+  //     ];
 
-  const whyMurjanCards = homeData
-    ? homeData.features.map((f) => ({
-        id: f.id, titleImage: f.image || localFeatureFallbacks[f.title] || safeFamilies, alt: f.title, description: f.description,
-      }))
-    : [
-        { id: 1, titleImage: safeFamilies, alt: 'Safe for Families', description: 'Certified lifeguards on duty at every attraction, every hour of operation.' },
-        { id: 2, titleImage: excitingAttractions, alt: 'Exciting Attractions', description: '10+ rides and pools crafted for maximum joy, variety, and wonder.' },
-        { id: 3, titleImage: deliciousDining, alt: 'Delicious Dining', description: 'Seven venues serving fresh, locally sourced cuisine and refreshments.' },
-        { id: 4, titleImage: pristineFacilities, alt: 'Pristine Facilities', description: 'Maintained to international standards — spotless, safe, and welcoming.' },
-      ];
+  const attractionsData = [
+  {
+    id: 1,
+    title: 'Water Slides',
+    description: 'Adrenaline-pumping slides for thrill seekers of every age.',
+    image: slide,
+    link: '/attractions',
+  },
+  {
+    id: 2,
+    title: 'Lazy River',
+    description: 'Drift through scenic waterways at your own peaceful pace.',
+    image: river,
+    link: '/attractions',
+  },
+  {
+    id: 3,
+    title: 'Kiddie Splash Zone',
+    description: 'Safe, joyful water play designed for little ones.',
+    image: splash,
+    link: '/attractions',
+  },
+  {
+    id: 4,
+    title: 'Family Slides',
+    description: 'More family fun awaits with three exciting slides.',
+    image: family,
+    link: '/attractions',
+  },
+];
+
+  // const whyMurjanCards = homeData
+  //   ? homeData.features.map((f) => ({
+  //       id: f.id, titleImage: f.image || localFeatureFallbacks[f.title] || safeFamilies, alt: f.title, description: f.description,
+  //     }))
+  //   : [
+  //       { id: 1, titleImage: safeFamilies, alt: 'Safe for Families', description: 'Certified lifeguards on duty at every attraction, every hour of operation.' },
+  //       { id: 2, titleImage: excitingAttractions, alt: 'Exciting Attractions', description: '10+ rides and pools crafted for maximum joy, variety, and wonder.' },
+  //       { id: 3, titleImage: deliciousDining, alt: 'Delicious Dining', description: 'Seven venues serving fresh, locally sourced cuisine and refreshments.' },
+  //       { id: 4, titleImage: pristineFacilities, alt: 'Pristine Facilities', description: 'Maintained to international standards — spotless, safe, and welcoming.' },
+  //     ];
+
+  const whyMurjanCards = [
+  {
+    id: 1,
+    titleImage: safeFamilies,
+    alt: 'Safe for Families',
+    description:
+      'Certified lifeguards on duty at every attraction, every hour of operation.',
+  },
+  {
+    id: 2,
+    titleImage: excitingAttractions,
+    alt: 'Exciting Attractions',
+    description:
+      '10+ rides and pools crafted for maximum joy, variety, and wonder.',
+  },
+  {
+    id: 3,
+    titleImage: deliciousDining,
+    alt: 'Delicious Dining',
+    description:
+      'Seven venues serving fresh, locally sourced cuisine and refreshments.',
+  },
+  {
+    id: 4,
+    titleImage: pristineFacilities,
+    alt: 'Pristine Facilities',
+    description:
+      'Maintained to international standards — spotless, safe, and welcoming.',
+  },
+];
 
   const testimonialsData = homeData
     ? homeData.testimonials.map((t) => ({
@@ -210,8 +272,8 @@ export default function Home() {
             }}
             className="inline-flex items-center space-x-1.5 text-[#38C6DF] hover:text-[#00BCDE] font-semibold text-sm sm:text-base transition-colors group cursor-pointer"
           >
-            <span>Explore</span>
-            <span className="transform group-hover:translate-x-1 transition-transform duration-200">&rsaquo;</span>
+            {/* <span>Explore</span> */}
+            {/* <span className="transform group-hover:translate-x-1 transition-transform duration-200">&rsaquo;</span> */}
           </a>
         </div>
 
