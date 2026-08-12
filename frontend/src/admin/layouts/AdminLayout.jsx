@@ -28,10 +28,10 @@ const NAV_ITEMS = [
     to: "/admin/testimonials",
     label: "Testimonials",
   },
-  {
-    to: "/admin/announcements",
-    label: "Announcements",
-  },
+  // {
+  //   to: "/admin/announcements",
+  //   label: "Announcements",
+  // },
   // {
   //   to: "/admin/gallery-management",
   //   label: "Gallery Management",
