@@ -11,6 +11,7 @@ import ParkRules from './pages/ParkRules';
 import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 import { AuthProvider } from './admin/context/AuthContext';
 import ProtectedRoute from './admin/components/ProtectedRoute';
@@ -45,6 +46,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+          <ScrollToTop />
         <Routes>
           {/* Public website */}
           <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
