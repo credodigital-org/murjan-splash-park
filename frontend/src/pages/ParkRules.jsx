@@ -13,35 +13,56 @@ export default function ParkRules() {
     <div className="w-full font-sans pb-0 overflow-x-hidden bg-white">
 
       {/* SECTION 1: HERO AREA */}
-      <section className="relative w-full flex justify-center items-center bg-[#F4FCFE] min-h-[280px] sm:min-h-[340px]">
-        <img
-          src={herobg}
-          alt="Park Rules Hero Background"
-          className="absolute inset-0 w-full h-full object-cover block"
-        />
+<section className="relative w-full flex justify-center items-center bg-[#F4FCFE] min-h-[420px] sm:min-h-[340px]">
 
-        {/* Text Overlay centered over hero image */}
-        <div className="relative z-10 w-full max-w-4xl px-4 py-12 flex flex-col items-center text-center">
-          <ScrollReveal animation="zoom-in" delay={100} className="flex flex-col items-center">
-            
-            {/* Search/Info Circular Icon */}
-            <div className="w-12 h-12 rounded-full bg-[#D5F5FA] flex items-center justify-center mb-3 shadow-md">
-              <svg className="w-6 h-6 text-[#00BCDE]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+  <img
+    src={herobg}
+    alt="Park Rules Hero Background"
+    className="absolute inset-0 w-full h-full object-cover block"
+  />
 
-            <h1 className="text-7xl sm:text-8xl lg:text-9xl font-black text-[#00BCDE] tracking-tight mb-3 drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)]">
-              Park Rules & Regulations
-            </h1>
+  <div className="relative z-10 w-full max-w-4xl px-4 py-16 flex flex-col items-center text-center">
 
-            {/* Subtitle Paragraph */}
-            <p className="text-xs sm:text-sm md:text-base text-gray-700 max-w-2xl font-medium leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
-              Parents and guardians, please read the signboards and explain them to your children. 
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+    <ScrollReveal
+      animation="zoom-in"
+      delay={100}
+      className="flex flex-col items-center"
+    >
+
+      {/* Search / Info Icon */}
+      <div className="w-12 h-12 rounded-full bg-[#D5F5FA] flex items-center justify-center mb-5 shadow-md">
+        <svg
+          className="w-6 h-6 text-[#00BCDE]"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
+
+      {/* Main Heading */}
+ <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium text-[#00BCDE] tracking-tight mb-4">
+  Park Rules & Regulations
+</h1>
+
+      {/* Subtitle */}
+      {/* <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl font-medium leading-relaxed">
+        Parents and guardians, please read the signboards and explain them to your children.
+      </p> */}
+      <p className="text-sm sm:text-base text-gray-700 max-w-3xl font-medium leading-relaxed">
+  Parents and guardians, please read the signboards and explain them to your children.
+</p>
+
+    </ScrollReveal>
+
+  </div>
+</section>
 
       {/* SECTION 2: EXACT RULES & REGULATIONS FROM IMAGE */}
       <section className="relative w-full px-4 sm:px-8 py-10 sm:py-16 bg-[#F4FCFE] flex flex-col items-center">
@@ -49,9 +70,12 @@ export default function ParkRules() {
           
           <ScrollReveal animation="fade-up" delay={100}>
             {/* Main Section Title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#00BCDE] tracking-tight mb-4">
+            {/* <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#00BCDE] tracking-tight mb-4">
               Park Rules & Regulations
-            </h2>
+            </h2> */}
+            <h2 className="text-3xl sm:text-4xl md:text-4xl font-semibold text-[#00BCDE] tracking-tight mb-4">
+  Park Rules & Regulations
+</h2>
             
             {/* Sub-heading intro */}
             <p className="text-base sm:text-lg font-medium text-gray-800 mb-6">

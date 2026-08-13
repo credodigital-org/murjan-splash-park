@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 import { getGalleryImages } from "../services/galleryService";
 
 // Hero assets remain static because they are part of the page design.
-import herobg from "../assets/GalleryImages/herobg.png";
+import herobg from "../assets/GalleryImages/herobg.webp";
 import mainhead from "../assets/GalleryImages/herotext.png";
 
 
@@ -178,7 +178,7 @@ export default function Gallery() {
       >
         {/* Background Image */}
 
-        <img
+        {/* <img
           src={item.src}
           alt={item.title}
           className="
@@ -189,7 +189,21 @@ export default function Gallery() {
             transition-transform
             duration-500
           "
-        />
+        /> */}
+        <img
+  src={item.src}
+  alt={item.title}
+  loading="lazy"
+  decoding="async"
+  className="
+    w-full
+    h-full
+    object-cover
+    group-hover:scale-105
+    transition-transform
+    duration-500
+  "
+/>
 
         {/* Dark Gradient */}
 
