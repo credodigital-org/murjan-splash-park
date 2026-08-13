@@ -206,12 +206,12 @@ useEffect(() => {
               </div>
 
               {/* Free Entry Badge */}
-              <div className="mt-auto mb-6 bg-[#FCE8E6] px-4 py-1.5 rounded-full flex items-center justify-center gap-1.5 border border-red-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500 inline-block"></span>
-                <p className="text-[10px] sm:text-[11px] font-bold text-red-600">
-                  Children below 2 years or below 0.75 cm <span className="uppercase">FREE!</span>
-                </p>
-              </div>
+              {/* <div className="mt-auto mb-6 bg-[#FCE8E6] px-4 py-1.5 rounded-full flex items-center justify-center gap-1.5 border border-red-100"> */}
+                {/* <span className="w-1.5 h-1.5 rounded-full bg-red-500 inline-block"></span> */}
+                {/* <p className="text-[10px] sm:text-[11px] font-bold text-red-600"> */}
+                  {/* Children below 2 years or below 0.75 cm <span className="uppercase">FREE!</span> */}
+                {/* </p> */}
+              {/* </div> */}
 
               {/* Action Button */}
               {/* <BookButton /> */}
