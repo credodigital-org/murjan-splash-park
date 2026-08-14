@@ -13,7 +13,7 @@ import { getBlogs } from '../services/blogService';
 import attract from '../assets/HomeImages/attract.png';
 import splash from '../assets/HomeImages/splash.png';
 import river from '../assets/HomeImages/river.png';
-import slide from '../assets/HomeImages/slide.png';
+import slide from '../assets/HomeImages/img1.png';
 import family from '../assets/AttractionImages/img8.png';
 
 import waveTop from '../assets/HomeImages/wave-top.png';
