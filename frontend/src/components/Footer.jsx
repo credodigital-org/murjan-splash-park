@@ -32,7 +32,15 @@ export default function Footer() {
 
               <div className="text-xs sm:text-sm space-y-0.5 sm:space-y-1 text-gray-800 font-medium mt-3 sm:mt-4">
                 <p className="font-bold text-gray-900 mb-0.5 sm:mb-1">Murjan Splash Park</p>
-                <p>Inside Khalifa park,Opp. FAB ,Abu dhabi</p>
+                {/* <p>Inside Khalifa park,Opp. FAB ,Abu dhabi</p> */}
+                <a
+  href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:underline hover:text-gray-900 transition-colors"
+>
+  Inside Khalifa Park, Opp. FAB, Abu Dhabi
+</a>
               </div>
 
               <div className="flex items-center space-x-3 pt-3 sm:pt-4">
@@ -48,9 +56,23 @@ export default function Footer() {
 
           <div className="md:col-span-7">
             <ScrollReveal animation="slide-right" delay={200}>
-              <div className="overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-md h-48 sm:h-64 md:h-72 lg:h-96 w-full">
+              {/* <div className="overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-md h-48 sm:h-64 md:h-72 lg:h-96 w-full">
                 <img src={mapImg} alt="Location Map" className="w-full h-full object-cover" />
-              </div>
+              </div> */}
+
+              <a
+  href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-md h-48 sm:h-64 md:h-72 lg:h-96 w-full cursor-pointer"
+  aria-label="Open Murjan Splash Park location in Google Maps"
+>
+  <img
+    src={mapImg}
+    alt="Murjan Splash Park Location Map"
+    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+  />
+</a>
             </ScrollReveal>
           </div>
 

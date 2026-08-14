@@ -14,6 +14,7 @@ export default function Tickets() {
   const [currency, setCurrency] = useState('AED');
   const [phone, setPhone] = useState('+97126756409');
   const [whatsapp, setWhatsapp] = useState('+971527186938');
+  const [secondPhone, setSecondPhone] = useState('+971524153524');
   const [bookingUrl, setBookingUrl] = useState('');
   // const [hoursLabel, setHoursLabel] = useState('1.00PM to 09.00PM');
   const [weekdaysHoursLabel, setWeekdaysHoursLabel] = useState('');
@@ -45,6 +46,7 @@ useEffect(() => {
     .then((s) => {
       if (s.phone) setPhone(s.phone);
       if (s.whatsapp_number) setWhatsapp(s.whatsapp_number);
+      if (s.second_phone) setSecondPhone(s.second_phone);
       if (s.booking_redirect_url) setBookingUrl(s.booking_redirect_url);
     })
     .catch(() => {});
@@ -202,6 +204,18 @@ useEffect(() => {
                     </svg>
                     {phone}
                   </a>
+
+                  {secondPhone && (
+  <a
+    href={`tel:${secondPhone.replace(/[^0-9+]/g, '')}`}
+    className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#00BCDE] hover:underline"
+  >
+    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.52 21 3 13.48 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.27 1.11l-2.2 2.2z"/>
+    </svg>
+    {secondPhone}
+  </a>
+)}
                 </div>
               </div>
 
