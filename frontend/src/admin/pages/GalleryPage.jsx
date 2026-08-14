@@ -1,12 +1,21 @@
 import ResourceListPage from "../components/ResourceListPage";
 import galleryService from "../services/galleryService";
 
+// const CATEGORY_OPTIONS = [
+//   { value: "water_slides", label: "Water Slides" },
+//   { value: "lazy_river", label: "Lazy River" },
+//   { value: "kiddie_zone", label: "Kiddie Splash Zone" },
+//   { value: "dining", label: "Dining & Delights" },
+//   { value: "events", label: "Events" },
+//   { value: "general", label: "General" },
+// ];
+
 const CATEGORY_OPTIONS = [
-  { value: "water_slides", label: "Water Slides" },
-  { value: "lazy_river", label: "Lazy River" },
-  { value: "kiddie_zone", label: "Kiddie Splash Zone" },
-  { value: "dining", label: "Dining & Delights" },
-  { value: "events", label: "Events" },
+  { value: "water_slides", label: "Thrill Slides" },
+  { value: "lazy_river", label: "Family Memory" },
+  { value: "kiddie_zone", label: "Kids Zone" },
+  { value: "dining", label: "Guest Memories" },
+  { value: "events", label: "Happy moments" },
   { value: "general", label: "General" },
 ];
 

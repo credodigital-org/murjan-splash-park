@@ -12,13 +12,22 @@ import mainhead from "../assets/GalleryImages/herotext.png";
 // Backend category → Frontend tab mapping
 // --------------------------------------------------
 
+// const CATEGORY_TO_TAB = {
+//   water_slides: "Thrill Slides",
+//   lazy_river: "Guest Memories",
+//   kiddie_zone: "Kids Zone",
+//   dining: "Happy moments",
+//   events: "Happy moments",
+//   general: "Family Memory",
+// };
+
 const CATEGORY_TO_TAB = {
   water_slides: "Thrill Slides",
-  lazy_river: "Guest Memories",
+  lazy_river: "Family Memory",
   kiddie_zone: "Kids Zone",
-  dining: "Happy moments",
+  dining: "Guest Memories",
   events: "Happy moments",
-  general: "Family Memory",
+  general: "General",
 };
 
 
