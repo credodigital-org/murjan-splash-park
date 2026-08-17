@@ -72,7 +72,7 @@ const CATEGORY_OPTIONS = [
   { value: "general", label: "Family Memory" },
   { value: "kiddie_zone", label: "Kids Zone" },
   { value: "lazy_river", label: "Guest Memories" },
-  { value: "dining", label: "Happy moments" },
+  // { value: "dining", label: "Happy moments" },
   { value: "events", label: "Happy moments" },
 ];
 
@@ -81,7 +81,7 @@ const CATEGORY_LABELS = {
   general: "Family Memory",
   kiddie_zone: "Kids Zone",
   lazy_river: "Guest Memories",
-  dining: "Happy moments",
+  // dining: "Happy moments",
   events: "Happy moments",
 };
 
