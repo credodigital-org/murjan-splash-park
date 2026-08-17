@@ -204,7 +204,7 @@ useEffect(() => {
                     </svg>
                     {phone}
                   </a>
-
+ <p className="text-[10px] text-gray-400 font-medium">— or —</p>
                   {secondPhone && (
   <a
     href={`tel:${secondPhone.replace(/[^0-9+]/g, '')}`}
