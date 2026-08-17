@@ -4,6 +4,7 @@ import Attractions from './pages/Attractions';
 import Dining from './pages/Dining';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
+import BlogDetail from "./pages/BlogDetail";
 import Contact from './pages/Contact';
 import Tickets from './pages/Tickets';
 import BirthdayParties from './pages/BirthdayParties';
@@ -12,6 +13,7 @@ import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import FloatingContactButtons from './components/FloatingContactButtons';
 
 import { AuthProvider } from './admin/context/AuthContext';
 import ProtectedRoute from './admin/components/ProtectedRoute';
@@ -38,6 +40,7 @@ function PublicLayout({ children }) {
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />
+          <FloatingContactButtons />
     </div>
   );
 }
@@ -54,6 +57,10 @@ function App() {
           <Route path="/dining" element={<PublicLayout><Dining /></PublicLayout>} />
           <Route path="/gallery" element={<PublicLayout><Gallery /></PublicLayout>} />
           <Route path="/blog" element={<PublicLayout><Blog /></PublicLayout>} />
+          <Route
+  path="/blog/:slug"
+  element={<PublicLayout><BlogDetail /></PublicLayout>}
+/>
           <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
           <Route path="/tickets" element={<PublicLayout><Tickets /></PublicLayout>} />
           <Route path="/birthdayparties" element={<PublicLayout><BirthdayParties /></PublicLayout>} />

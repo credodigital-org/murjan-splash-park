@@ -89,19 +89,39 @@ export default function Gallery() {
          *
          * Do NOT use hardcoded gallery images here.
          */
+        // const normalizedImages = Array.isArray(images)
+        //   ? images
+        //       .filter((item) => item && item.image)
+        //       .map((item) => ({
+        //         id: item.id,
+        //         title: item.title || "Murjan Splash Park",
+        //         badge:
+        //           item.caption ||
+        //           getDisplayCategory(item.category),
+        //         category: getDisplayCategory(item.category),
+        //         src: item.image,
+        //       }))
+        //   : [];
+
         const normalizedImages = Array.isArray(images)
-          ? images
-              .filter((item) => item && item.image)
-              .map((item) => ({
-                id: item.id,
-                title: item.title || "Murjan Splash Park",
-                badge:
-                  item.caption ||
-                  getDisplayCategory(item.category),
-                category: getDisplayCategory(item.category),
-                src: item.image,
-              }))
-          : [];
+  ? images
+      .filter((item) => item && item.image)
+      .sort(
+        (a, b) =>
+          (Number(a.display_order) || 0) -
+          (Number(b.display_order) || 0)
+      )
+      .map((item) => ({
+        id: item.id,
+        title: item.title || "Murjan Splash Park",
+        badge:
+          item.caption ||
+          getDisplayCategory(item.category),
+        category: getDisplayCategory(item.category),
+        src: item.image,
+        displayOrder: Number(item.display_order) || 0,
+      }))
+  : [];
 
         setGalleryImages(normalizedImages);
       } catch (err) {

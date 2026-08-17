@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { getBlogs } from "../services/blogService";
 
@@ -10,14 +11,56 @@ import { getBlogs } from "../services/blogService";
 import herobg from "../assets/BlogImages/herobg.png";
 import mainhead from "../assets/BlogImages/herotext.png";
 
+// --------------------------------------------------
+// Create a short text preview from blog HTML/content
+// --------------------------------------------------
+
+function getBlogPreview(content, maxLength = 30) {
+  if (!content) return "";
+
+  const temp = document.createElement("div");
+  temp.innerHTML = content;
+
+  // If blog content contains HTML paragraphs,
+  // use ONLY the first real paragraph.
+  const paragraphs = temp.querySelectorAll("p");
+
+  let text = "";
+
+  if (paragraphs.length > 0) {
+    for (const paragraph of paragraphs) {
+      const paragraphText = paragraph.textContent
+        ?.replace(/\s+/g, " ")
+        .trim();
+
+      if (paragraphText) {
+        text = paragraphText;
+        break;
+      }
+    }
+  }
+
+  // Fallback for plain-text blog content
+  if (!text) {
+    text = (temp.textContent || temp.innerText || "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  if (text.length > maxLength) {
+    return `${text.slice(0, maxLength).trim()}...`;
+  }
+
+  return text;
+}
+// --------------------------------------------------
+// Blog Page
+// --------------------------------------------------
 
 export default function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
-
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState(null);
-
 
   // --------------------------------------------------
   // Load blog posts from backend
@@ -51,7 +94,6 @@ export default function Blog() {
                 id: post.id ?? post.slug,
                 slug: post.slug,
                 title: post.title || "",
-                // description: post.excerpt || "",
                 description: post.content || "",
                 image: post.featured_image || "",
               }))
@@ -85,18 +127,20 @@ export default function Blog() {
     };
   }, []);
 
-
   // --------------------------------------------------
-  // Loading state
+  // Loading State
   // --------------------------------------------------
 
   if (loading) {
     return (
       <div className="w-full font-sans pb-0 overflow-x-hidden bg-white">
 
-        {/* HERO */}
+        {/* ==================================================
+            HERO
+        ================================================== */}
 
         <section className="relative w-full flex justify-center items-center">
+
           <img
             src={herobg}
             alt="Murjan Splash Park Blog Hero Background"
@@ -112,6 +156,7 @@ export default function Blog() {
           />
 
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none px-4">
+
             <img
               src={mainhead}
               alt="Read More About Us"
@@ -122,22 +167,29 @@ export default function Blog() {
                 object-contain
               "
             />
+
           </div>
         </section>
 
-
-        {/* LOADING */}
+        {/* ==================================================
+            LOADING
+        ================================================== */}
 
         <section className="w-full flex justify-center py-20">
+
           <p className="text-gray-500">
             Loading blog posts...
           </p>
+
         </section>
 
       </div>
     );
   }
 
+  // --------------------------------------------------
+  // Main Page
+  // --------------------------------------------------
 
   return (
     <div className="w-full font-sans pb-0 overflow-x-hidden bg-white">
@@ -174,6 +226,7 @@ export default function Blog() {
               justify-center
             "
           >
+
             <img
               src={mainhead}
               alt="Read More About Us"
@@ -184,11 +237,11 @@ export default function Blog() {
                 object-contain
               "
             />
+
           </ScrollReveal>
 
         </div>
       </section>
-
 
       {/* ==================================================
           SECTION 2: INTRO CARD
@@ -247,7 +300,6 @@ export default function Blog() {
               Dive Into Adventure
             </h2>
 
-
             {/* Description */}
 
             <p
@@ -271,7 +323,6 @@ export default function Blog() {
               splash pads, every detail is designed to maximize
               excitement and create lasting memories under the sun.
             </p>
-
 
             {/* Water Drop Icon */}
 
@@ -313,7 +364,6 @@ export default function Blog() {
 
       </section>
 
-
       {/* ==================================================
           SECTION 3: BLOG CARDS
       ================================================== */}
@@ -335,26 +385,23 @@ export default function Blog() {
 
         <div className="max-w-5xl w-full">
 
-          {/* ================================================
+          {/* ==================================================
               ERROR STATE
-          ================================================ */}
+          ================================================== */}
 
           {error && (
             <div className="text-center py-12">
+
               <p className="text-red-500">
                 {error}
               </p>
+
             </div>
           )}
 
-
-          {/* ================================================
+          {/* ==================================================
               EMPTY STATE
-
-              Important:
-              If Admin has no published blog posts,
-              we do NOT show hardcoded posts.
-          ================================================ */}
+          ================================================== */}
 
           {!error && blogPosts.length === 0 && (
             <div className="text-center py-16">
@@ -366,10 +413,9 @@ export default function Blog() {
             </div>
           )}
 
-
-          {/* ================================================
+          {/* ==================================================
               BLOG GRID
-          ================================================ */}
+          ================================================== */}
 
           {!error && blogPosts.length > 0 && (
             <div
@@ -389,11 +435,6 @@ export default function Blog() {
                   key={post.id || post.slug || index}
                   animation="fade-up"
                   delay={100 + index * 100}
-
-                  /*
-                   * Preserve the original design:
-                   * middle card steps down.
-                   */
                   className={
                     index % 3 === 1
                       ? "md:mt-8 lg:mt-12"
@@ -401,8 +442,15 @@ export default function Blog() {
                   }
                 >
 
-                  <div
+                  {/* ==================================================
+                      ENTIRE CARD IS CLICKABLE
+                  ================================================== */}
+
+                  <Link
+                    to={`/blog/${post.slug || post.id}`}
                     className="
+                      group
+                      block
                       bg-[#F5FCFD]
                       rounded-3xl
                       overflow-hidden
@@ -411,27 +459,32 @@ export default function Blog() {
                       border-cyan-50/50
                       flex
                       flex-col
-                      hover:shadow-md
+                      hover:shadow-lg
+                      hover:-translate-y-1
                       transition-all
                       duration-300
+                      no-underline
                     "
                   >
 
-                    {/* ======================================
+                    {/* ==================================================
                         CARD IMAGE
-                    ====================================== */}
+                    ================================================== */}
 
                     <div
                       className="
                         w-full
-                        h-48
-                        sm:h-52
+                        // h-48
+                        // sm:h-52
+                        h-40
+sm:h-44
                         bg-slate-100
                         overflow-hidden
                       "
                     >
 
                       {post.image ? (
+
                         <img
                           src={post.image}
                           alt={post.title}
@@ -439,9 +492,14 @@ export default function Blog() {
                             w-full
                             h-full
                             object-cover
+                            transition-transform
+                            duration-500
+                            group-hover:scale-105
                           "
                         />
+
                       ) : (
+
                         <div
                           className="
                             w-full
@@ -456,14 +514,14 @@ export default function Blog() {
                         >
                           No image
                         </div>
+
                       )}
 
                     </div>
 
-
-                    {/* ======================================
+                    {/* ==================================================
                         CARD BODY
-                    ====================================== */}
+                    ================================================== */}
 
                     <div
                       className="
@@ -475,7 +533,9 @@ export default function Blog() {
                       "
                     >
 
-                      {/* Title */}
+                      {/* ==================================================
+                          BLOG TITLE
+                      ================================================== */}
 
                       <h3
                         className="
@@ -485,29 +545,84 @@ export default function Blog() {
                           text-gray-900
                           mb-3
                           leading-tight
+                          transition-colors
+                          duration-300
+                          group-hover:text-[#00BCDE]
                         "
                       >
                         {post.title}
                       </h3>
 
+                      {/* ==================================================
+                          SHORT BLOG PREVIEW
+                      ================================================== */}
 
-                      {/* Description */}
-
-                      <p
+                      {/* <p
                         className="
                           text-xs
                           sm:text-sm
                           text-gray-600
                           leading-relaxed
                           font-normal
+                          mb-5
                         "
                       >
-                        {post.description}
-                      </p>
+                        {getBlogPreview(post.description, 90)}
+                      </p> */}
+                      <p
+  className="
+    text-xs
+    sm:text-sm
+    text-gray-600
+    leading-relaxed
+    font-normal
+    mb-4
+    line-clamp-2
+    min-h-[40px]
+  "
+>
+  {getBlogPreview(post.description, 90)}
+</p>
+
+                      {/* ==================================================
+                          READ MORE
+                      ================================================== */}
+
+                      <div
+                        className="
+                          inline-flex
+                          items-center
+                          gap-2
+                          self-start
+                          text-sm
+                          font-bold
+                          text-[#00BCDE]
+                          group-hover:text-[#080B38]
+                          transition-colors
+                          duration-300
+                        "
+                      >
+
+                        <span>
+                          Read More
+                        </span>
+
+                        <span
+                          className="
+                            text-base
+                            transition-transform
+                            duration-300
+                            group-hover:translate-x-1
+                          "
+                        >
+                          →
+                        </span>
+
+                      </div>
 
                     </div>
 
-                  </div>
+                  </Link>
 
                 </ScrollReveal>
 
