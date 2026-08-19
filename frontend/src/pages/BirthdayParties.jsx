@@ -67,7 +67,7 @@ const handleCardClick = (clickedIndex) => {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           
           {/* Phone Call Card */}
-          <ScrollReveal animation="slide-left" delay={100} className="w-full sm:w-auto">
+          {/* <ScrollReveal animation="slide-left" delay={100} className="w-full sm:w-auto">
             <Card3D intensity={8}>
               <a
                 href="tel:+97126756409"
@@ -79,10 +79,30 @@ const handleCardClick = (clickedIndex) => {
                 </span>
               </a>
             </Card3D>
-          </ScrollReveal>
+          </ScrollReveal> */}
+
+          {/* Phone Call Card */}
+<ScrollReveal animation="slide-left" delay={100} className="w-full sm:w-auto">
+  <Card3D intensity={8}>
+    <a
+      href="tel:+97126756409"
+      className="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-full py-3.5 px-4 sm:px-6 shadow-sm hover:shadow-md transition-all no-underline w-full sm:w-auto min-w-0"
+    >
+      <img
+        src={callIcon}
+        alt="Call Icon"
+        className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
+      />
+
+      <span className="font-bold text-gray-900 text-xs sm:text-sm md:text-base text-center leading-snug break-words">
+        Book Now: +971 52718638 & +971 26756409
+      </span>
+    </a>
+  </Card3D>
+</ScrollReveal>
 
           {/* WhatsApp Card */}
-          <ScrollReveal animation="slide-right" delay={200} className="w-full sm:w-auto">
+          {/* <ScrollReveal animation="slide-right" delay={200} className="w-full sm:w-auto">
             <Card3D intensity={8}>
               <a
                 href="https://wa.me/97152718638"
@@ -96,7 +116,28 @@ const handleCardClick = (clickedIndex) => {
                 </span>
               </a>
             </Card3D>
-          </ScrollReveal>
+          </ScrollReveal> */}
+          {/* WhatsApp Card */}
+<ScrollReveal animation="slide-right" delay={200} className="w-full sm:w-auto">
+  <Card3D intensity={8}>
+    <a
+      href="https://wa.me/97152718638"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-full py-3.5 px-4 sm:px-6 shadow-sm hover:shadow-md transition-all no-underline w-full sm:w-auto min-w-0"
+    >
+      <img
+        src={whatsappIcon}
+        alt="WhatsApp Icon"
+        className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
+      />
+
+      <span className="font-bold text-gray-900 text-xs sm:text-sm md:text-base text-center leading-snug break-words">
+        Contact Us WhatsApp for Enquiries
+      </span>
+    </a>
+  </Card3D>
+</ScrollReveal>
 
         </div>
       </section>

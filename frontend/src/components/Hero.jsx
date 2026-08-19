@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
 
       {/* Continuous Ticker Bar Container */}
-      <div className="w-full bg-white py-2.5 sm:py-3 lg:py-3.5 border-none outline-none overflow-hidden select-none flex-shrink-0 z-30 -mt-[1px]">
+      {/* <div className="w-full bg-white py-2.5 sm:py-3 lg:py-3.5 border-none outline-none overflow-hidden select-none flex-shrink-0 z-30 -mt-[1px]">
         <div className="animate-ticker text-[#00A896] font-semibold text-xs sm:text-sm lg:text-base tracking-wider whitespace-nowrap flex">
           
           <div className="flex items-center space-x-8 sm:space-x-12 pr-8 sm:pr-12 flex-shrink-0">
@@ -60,7 +60,40 @@ export default function Hero() {
           </div>
 
         </div>
-      </div>
+      </div> */}
+
+      {/* Continuous Ticker Bar */}
+<div className="w-full bg-white py-2.5 sm:py-3 lg:py-3.5 overflow-hidden select-none flex-shrink-0 z-30 -mt-[1px]">
+  <div className="ticker-track text-[#00A896] font-semibold text-xs sm:text-sm lg:text-base tracking-wider whitespace-nowrap">
+
+    {/* FIRST COPY */}
+    <div className="ticker-group">
+      {[...Array(4)].map((_, i) => (
+        <div
+          key={`ticker-1-${i}`}
+          className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+        >
+          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-[#00A896] rounded-full flex-shrink-0"></span>
+          <span>OPEN DAILY • 1 PM – 9 PM</span>
+        </div>
+      ))}
+    </div>
+
+    {/* EXACT DUPLICATE */}
+    <div className="ticker-group" aria-hidden="true">
+      {[...Array(4)].map((_, i) => (
+        <div
+          key={`ticker-2-${i}`}
+          className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+        >
+          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-[#00A896] rounded-full flex-shrink-0"></span>
+          <span>OPEN DAILY • 1 PM – 9 PM</span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
     </section>
   );
 }

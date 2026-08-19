@@ -20,7 +20,7 @@ body {
 }
 
 /* Continuous Sliding Ticker Animation */
-@keyframes ticker {
+/* @keyframes ticker {
   0% {
     transform: translateX(0%);
   }
@@ -38,6 +38,43 @@ body {
 
 .animate-ticker:hover {
   animation-play-state: paused;
+} */
+
+/* Seamless Continuous Sliding Ticker */
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (min-width: 640px) {
+  .ticker-group {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Hero Image Sharpening */
@@ -197,7 +234,7 @@ html {
 }
 
 /* Respect user system settings for reduced motion */
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -206,6 +243,25 @@ html {
   .animate-pendulum,
   .animate-hero-float,
   .animate-ticker,
+  .shimmer-effect,
+  .bubble-1,
+  .bubble-2,
+  .bubble-3,
+  .bubble-4,
+  .animate-btn-glow {
+    animation: none !important;
+  }
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-3d-zoom,
+  .animate-pendulum,
+  .animate-hero-float,
+  .ticker-track,
   .shimmer-effect,
   .bubble-1,
   .bubble-2,
