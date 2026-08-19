@@ -108,7 +108,7 @@ const handleCardClick = (clickedIndex) => {
   <span className="block">+971 52718638 & +971 26756409</span>
 </span> */}
 <span className="font-bold text-gray-900 text-[11px] sm:text-sm md:text-base text-center leading-snug min-w-0">
-  <span className="block">Book Now: +971 52718638</span>
+  <span className="block">Book Now: +971 527186938</span>
   <span className="block">& +971 26756409</span>
 </span>
     </a>
@@ -135,7 +135,8 @@ const handleCardClick = (clickedIndex) => {
 <ScrollReveal animation="slide-right" delay={200} className="w-full sm:w-auto">
   <Card3D intensity={8}>
     <a
-      href="https://wa.me/97152718638"
+      // href="https://wa.me/971527186938"
+      href="https://wa.me/971527186938"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-full py-3.5 px-4 sm:px-6 shadow-sm hover:shadow-md transition-all no-underline w-full sm:w-auto min-w-0"
