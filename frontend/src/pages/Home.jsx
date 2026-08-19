@@ -136,7 +136,7 @@ export default function Home() {
   const whyMurjanCards = [
     { id: 1, titleImage: safeFamilies, alt: 'Safe for Families', description: 'Certified lifeguards on duty at every attraction, every hour of operation.' },
     { id: 2, titleImage: excitingAttractions, alt: 'Exciting Attractions', description: '10+ rides and pools crafted for maximum joy, variety, and wonder.' },
-    { id: 3, titleImage: deliciousDining, alt: 'Delicious Dining', description: 'Seven venues serving fresh, locally sourced cuisine and refreshments.' },
+    { id: 3, titleImage: deliciousDining, alt: 'Delicious Dining', description: 'Four venues serving fresh, locally sourced cuisine and refreshments.' },
     { id: 4, titleImage: pristineFacilities, alt: 'Pristine Facilities', description: 'Maintained to international standards — spotless, safe, and welcoming.' },
   ];
 
