@@ -80,7 +80,8 @@ export default function Footer() {
                 </p>
 
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+                  // href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+                  href="https://maps.app.goo.gl/CMurFTbCMCHuZq1GA?g_st=ac"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline hover:text-gray-900 transition-colors"
@@ -212,7 +213,8 @@ export default function Footer() {
             <ScrollReveal animation="slide-right" delay={200}>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+                // href="https://www.google.com/maps/search/?api=1&query=Murjan+Splash+Park+Abu+Dhabi"
+                href="https://maps.app.goo.gl/CMurFTbCMCHuZq1GA?g_st=ac"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-md h-48 sm:h-64 md:h-72 lg:h-96 w-full cursor-pointer"

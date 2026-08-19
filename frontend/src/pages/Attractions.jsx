@@ -13,7 +13,7 @@ import img5 from '../assets/AttractionImages/img5.png';
 import img6 from '../assets/AttractionImages/img6.png';
 import img7 from '../assets/AttractionImages/img7.png';
 import img8 from '../assets/AttractionImages/img8.png';
-import img9 from '../assets/AttractionImages/img9.png';
+import img9 from '../assets/AttractionImages/attraction1.jpeg';
 import unionWave from '../assets/AttractionImages/Union.svg'; 
 
 import murjanRestIcon from '../assets/AttractionImages/murjan-restaurant.png';
