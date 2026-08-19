@@ -94,9 +94,23 @@ const handleCardClick = (clickedIndex) => {
         className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
       />
 
-      <span className="font-bold text-gray-900 text-xs sm:text-sm md:text-base text-center leading-snug break-words">
+      {/* <span className="font-bold text-gray-900 text-xs sm:text-sm md:text-base text-center leading-snug break-words">
         Book Now: +971 52718638 & +971 26756409
-      </span>
+      </span> */}
+
+      {/* <span className="font-bold text-gray-900 text-[11px] sm:text-sm md:text-base text-center leading-snug min-w-0"></span> */}
+      {/* <span className="font-bold text-gray-900 text-[11px] sm:text-sm md:text-base text-center leading-snug min-w-0">
+  Book Now: +971 52718638 & +971 26756409
+</span> */}
+
+{/* <span className="font-bold text-gray-900 text-[11px] sm:text-sm md:text-base text-center leading-snug min-w-0">
+  <span className="block">Book Now</span>
+  <span className="block">+971 52718638 & +971 26756409</span>
+</span> */}
+<span className="font-bold text-gray-900 text-[11px] sm:text-sm md:text-base text-center leading-snug min-w-0">
+  <span className="block">Book Now: +971 52718638</span>
+  <span className="block">& +971 26756409</span>
+</span>
     </a>
   </Card3D>
 </ScrollReveal>
