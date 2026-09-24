@@ -233,11 +233,11 @@ export default function Footer() {
         </div>
 
         {/* COPYRIGHT */}
-        <div className="border-t border-black/10 pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-gray-700 space-y-2 sm:space-y-0 text-center sm:text-left">
+        {/* <div className="border-t border-black/10 pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-gray-700 space-y-2 sm:space-y-0 text-center sm:text-left">
 
           <p>
             © 2026 Murjan Splash Park. All rights reserved.
-          </p>
+          </p> */}
 
           {/* Future Links */}
           {/*
@@ -265,7 +265,51 @@ export default function Footer() {
           </div>
           */}
 
-        </div>
+        {/* </div> */}
+
+        {/* COPYRIGHT */}
+{/* <div className="border-t border-black/10 pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-xs text-gray-700 text-center sm:text-left">
+
+  <p>
+    © 2026 Murjan Splash Park. All rights reserved.
+  </p>
+
+  <p>
+    Designed & Developed by{" "}
+    <a
+      href="https://credodesigns.ae/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-gray-800 hover:text-gray-950 hover:underline transition-colors"
+    >
+      Credo Digital Designs
+    </a>
+  </p>
+
+</div> */}
+
+{/* COPYRIGHT */}
+<div className="border-t border-black/10 pt-4 sm:pt-5 lg:pt-6 text-center">
+
+  {/* Copyright */}
+  <p className="text-[10px] sm:text-xs text-gray-700">
+    © 2026 Murjan Splash Park. All rights reserved.
+  </p>
+
+  {/* Designed & Developed By */}
+  <p className="mt-2 text-[10px] sm:text-xs text-gray-700">
+    Designed & Developed by{" "}
+    <a
+      href="https://credodesigns.ae/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-gray-900 hover:underline hover:text-gray-950 transition-colors"
+    >
+      Credo Digital Designs
+    </a>
+  </p>
+
+</div>
 
       </div>
     </footer>

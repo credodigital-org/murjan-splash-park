@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://murjansplashpark.com/sitemap.xml
+Sitemap: https://www.murjansplashpark.com/sitemap.xml
