@@ -305,7 +305,7 @@ export default function Footer() {
       rel="noopener noreferrer"
       className="font-semibold text-gray-900 hover:underline hover:text-gray-950 transition-colors"
     >
-      Credo Digital Designs
+      Credo Digital Designs LLC
     </a>
   </p>
 
